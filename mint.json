@@ -1,0 +1,16 @@
+{
+  "name": "mint-tutorial",
+  "application": {
+    "head": "assets/head.html",
+    "title": "Mint Tutorial"
+  },
+  "source-directories": [
+    "source"
+  ],
+  "dependencies": {
+    "mint-ui": {
+      "repository": "https://github.com/mint-lang/mint-ui",
+      "constraint": "1.0.0 <= v < 2.0.0"
+    }
+  }
+}
