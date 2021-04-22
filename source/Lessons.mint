@@ -20,20 +20,49 @@ module Lessons {
   const ITEMS =
     [
       {
-        source = @asset(../assets/lessons/introduction/basics.txt),
         contents = <Lessons.Introduction.Basics/>,
         path = "/introduction/basics",
         category = "Introduction",
         title = "Basics",
-        solution = ""
+        files =
+          [
+            {
+              contents = @inline(../assets/lessons/introduction/basics.txt),
+              solution = "",
+              title = "Main.mint",
+              path = "Main.mint"
+            }
+          ]
       },
       {
-        solution = @asset(../assets/lessons/introduction/adding-data-solution.txt),
-        source = @asset(../assets/lessons/introduction/basics.txt),
         contents = <Lessons.Introduction.AddingData/>,
         path = "/introduction/adding-data",
         category = "Introduction",
-        title = "Adding Data"
+        title = "Adding Data",
+        files =
+          [
+            {
+              solution = @inline(../assets/lessons/introduction/adding-data-solution.txt),
+              contents = @inline(../assets/lessons/introduction/basics.txt),
+              title = "Main.mint",
+              path = "Main.mint"
+            }
+          ]
+      },
+      {
+        contents = <Lessons.Introduction.DynamicAttributes/>,
+        path = "/introduction/dynamic-attributes",
+        category = "Introduction",
+        title = "Dynamic Attributes",
+        files =
+          [
+            {
+              solution = @inline(../assets/lessons/introduction/dynamic-attributes-solution.txt),
+              contents = @inline(../assets/lessons/introduction/dynamic-attributes.txt),
+              title = "Main.mint",
+              path = "Main.mint"
+            }
+          ]
       }
     ]
 

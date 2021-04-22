@@ -9,12 +9,18 @@ record RequestData {
   files : Array(RequestFile)
 }
 
+record LessonFile {
+  solution : String,
+  contents : String,
+  title : String,
+  path : String
+}
+
 /* The data structure for the lesson. */
 record Lesson {
+  files : Array(LessonFile),
   category : String,
-  solution : String,
   contents : Html,
-  source : String,
   title : String,
   path : String
 }

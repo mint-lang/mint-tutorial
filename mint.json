@@ -11,6 +11,10 @@
     "mint-ui": {
       "repository": "https://github.com/mint-lang/mint-ui",
       "constraint": "1.0.0 <= v < 2.0.0"
+    },
+    "mint-codemirror": {
+      "repository": "https://github.com/mint-lang/mint-codemirror",
+      "constraint": "b67dbc07bddbce0dacd3f0d3f7abb083e607bc99:6.2.0"
     }
   }
 }

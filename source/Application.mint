@@ -5,90 +5,99 @@ store Application {
   /* The next lesson. */
   state nextLesson : Maybe(Lesson) = Maybe::Nothing
 
+  /* The contents of each file. */
+  state values : Map(String, String) = Map.empty()
+
+  /* The currently shown file. */
+  state activeFile : String = ""
+
   /* The current lesson. */
   state lesson : Lesson =
     {
       contents = <></>,
-      solution = "",
       category = "",
-      source = "",
+      files = [],
       title = "",
       path = ""
     }
 
-  /*
-  The original source code of the lesson - it's used to check if the
-  solution is the source.
-  */
-  state originalSource : String = ""
-
   /* The URL of the preview. */
   state previewURL : String = ""
 
-  /* The source of the solution. */
-  state solution : String = ""
-
-  /* The source what is displayed currently. */
-  state source : String = ""
+  /* Sets the currently shown file. */
+  fun setFile (path : String) {
+    next { activeFile = path }
+  }
 
   /* Sets the lesson to the given one. */
   fun setLesson (lesson : Lesson) {
     sequence {
-      load(lesson)
-
       next
         {
           previousLesson = Lessons.previousLesson(lesson),
           nextLesson = Lessons.nextLession(lesson),
-          lesson = lesson
+          activeFile = lesson.files[0]&.path or "",
+          lesson = lesson,
+          values =
+            Map.fromArray(
+              for (file of lesson.files) {
+                {file.path, file.contents}
+              })
         }
+
+      compile()
     }
   }
 
-  /* Loads the lesson files. */
-  fun load (lesson : Lesson) {
+  /* Shows the soltion of the current lesson. */
+  fun showSolution {
     sequence {
-      sourceResponse =
-        lesson.source
-        |> Http.get()
-        |> Http.send()
-
-      solutionResponse =
-        lesson.solution
-        |> Http.get()
-        |> Http.send()
-
       next
         {
-          originalSource = sourceResponse.body,
-          solution = solutionResponse.body,
-          source = sourceResponse.body
+          values =
+            Map.fromArray(
+              for (file of lesson.files) {
+                {file.path, file.solution}
+              } when {
+                String.isNotBlank(file.solution)
+              })
         }
 
-      updateSource(source)
-    } catch {
-      next {  }
+      compile()
     }
   }
 
-  /* Updates the source code and compiles it to get the preview URL. */
-  fun updateSource (value : String) {
-    sequence {
-      next { source = value }
+  /* Updates the source code of a file and compiles to get the preview URL. */
+  fun updateValue (path : String, value : String) {
+    if (Map.getWithDefault(path, "", values) == value) {
+      next {  }
+    } else {
+      sequence {
+        next { values = Map.set(path, value, values) }
+        DEBOUNCED_COMPILE()
+      }
+    }
+  }
 
+  /* Debounced version of the compile function. */
+  const DEBOUNCED_COMPILE = Function.debounce(500, compile)
+
+  /* Compiles the current state ito get the preview URL. */
+  fun compile {
+    sequence {
       data =
         encode {
           files =
-            [
+            for (path, contents of values) {
               {
-                contents = value,
-                path = "Main.mint"
+                contents = contents,
+                path = path
               }
-            ]
+            }
         }
 
       compileResponse =
-        "http://localhost:3002/compile"
+        "https://mint-sandbox-compiler.herokuapp.com/compile"
         |> Http.post()
         |> Http.jsonBody(data)
         |> Http.send()
