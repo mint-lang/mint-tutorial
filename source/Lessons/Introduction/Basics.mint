@@ -4,54 +4,66 @@ component Lessons.Introduction.Basics {
       <h2>"Introduction"</h2>
 
       <p>
-        "Welcome to the Mint tutorial. This will teach you everyt" \
-        "hing you need to know to build fast, small web applicati" \
-        "ons easily."
+        "Welcome to the Mint tutorial. This is an interactive exp" \
+        "loration of the Mint programming language, designed to m" \
+        "ake you productive as quickly as possible."
       </p>
 
       <p>
-        "You can also consult the "
+        "Make sure to also check out the "
+
+        <a
+          href="https://www.mint-lang.com/guide"
+          target="_blank">
+
+          "Guide"
+
+        </a>
+
+        " and the "
 
         <a
           href="https://www.mint-lang.com/api"
           target="_blank">
 
-          "API docs"
+          "API docs."
 
         </a>
-
-        " or — if you're impatient to start hacking on your machine locally — the "
-
-        <a
-          href="TODO"
-          target="_blank">
-
-          "60 second quickstart"
-
-        </a>
-
-        "."
       </p>
 
       <h2>"What is Mint?"</h2>
 
-      <p>"Mint is a tool for building fast web applications."</p>
-
       <p>
-        "It is similar to JavaScript frameworks such as React and" \
-        " Vue, which share a goal of making it easy to build slic" \
-        "k interactive user interfaces."
+        "Mint is a language specifically created for writing "
+
+        <strong>"single-page applications. "</strong>
+
+        "It provides you with all the necessary tooling to write "
+
+        <strong>"error free"</strong>
+
+        ", "
+
+        <strong>"readable"</strong>
+
+        ", and "
+
+        <strong>"maintainable"</strong>
+
+        " applications."
       </p>
 
       <p>
-        "But there's a crucial difference: Mint is also a languag" \
-        "e. This means your code benefits from all the optimizati" \
-        "ons that can be made at compile time."
+        "Mint is strongly typed, and compiles to JavaScript. This" \
+        " means your code is less prone to errors, easier to main" \
+        "tain, and benefit from optimizations done by the Mint co" \
+        "mpiler."
       </p>
 
       <p>
-        "Usually you build your entire app with Mint, but you can" \
-        " add it incrementally to an existing codebase as well."
+        "While we recommend you to use Mint to build entire appli" \
+        "cations, it can also be added incrementally to an existi" \
+        "ng codebase."
       </p>
 
       <h2>"How to use this tutorial"</h2>
