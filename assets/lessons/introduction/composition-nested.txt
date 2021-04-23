@@ -1,0 +1,5 @@
+component Nested {
+  fun render : Html {
+    <p>"This is another paragraph."</p>
+  }
+}

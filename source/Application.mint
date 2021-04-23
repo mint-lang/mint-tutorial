@@ -57,9 +57,13 @@ store Application {
           values =
             Map.fromArray(
               for (file of lesson.files) {
-                {file.path, file.solution}
-              } when {
-                String.isNotBlank(file.solution)
+                {
+                  file.path, if (String.isNotBlank(file.solution)) {
+                    file.solution
+                  } else {
+                    file.contents
+                  }
+                }
               })
         }
 

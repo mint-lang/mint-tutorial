@@ -1,0 +1,11 @@
+component Main {
+  style base {
+    /* Styles go here. */
+  }
+
+  fun render : Html {
+    <p::base>
+      "This is a paragraph."
+    </p>
+  }
+}

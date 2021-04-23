@@ -1,0 +1,17 @@
+component Main {
+  style base {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 2em;
+    color: purple;
+  }
+
+  fun render : Html {
+    <div>
+      <p::base>
+        "This is a paragraph."
+      </p>
+
+      <Nested/>
+    </div>
+  }
+}

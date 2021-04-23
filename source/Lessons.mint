@@ -63,6 +63,42 @@ module Lessons {
               path = "Main.mint"
             }
           ]
+      },
+      {
+        contents = <Lessons.Introduction.Styling/>,
+        path = "/introduction/styling",
+        category = "Introduction",
+        title = "Styling",
+        files =
+          [
+            {
+              solution = @inline(../assets/lessons/introduction/styling-solution.txt),
+              contents = @inline(../assets/lessons/introduction/styling.txt),
+              title = "Main.mint",
+              path = "Main.mint"
+            }
+          ]
+      },
+      {
+        contents = <Lessons.Introduction.Composition/>,
+        path = "/introduction/composition",
+        category = "Introduction",
+        title = "Composition",
+        files =
+          [
+            {
+              solution = @inline(../assets/lessons/introduction/composition-main-solution.txt),
+              contents = @inline(../assets/lessons/introduction/composition-main.txt),
+              title = "Main.mint",
+              path = "Main.mint"
+            },
+            {
+              contents = @inline(../assets/lessons/introduction/composition-nested.txt),
+              solution = "",
+              title = "Nested.mint",
+              path = "Nested.mint"
+            }
+          ]
       }
     ]
 
