@@ -1,8 +1,0 @@
-component Main {
-  fun render : String {
-    "Hello #{String.toUpperCase(name)}!"
-  } where {
-    name =
-      "world"
-  }
-}
