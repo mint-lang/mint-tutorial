@@ -226,7 +226,9 @@ component Workspace {
           }
         </div>
 
-        <iframe::iframe src={previewURL}/>
+        <div>
+          <iframe::iframe src={previewURL}/>
+        </div>
       </div>
     }
   }
