@@ -35,14 +35,14 @@ module Lessons {
           ]
       },
       {
-        contents = <Lessons.Introduction.AddingData/>,
-        path = "/introduction/adding-data",
+        contents = <Lessons.Introduction.Functions/>,
+        path = "/introduction/functions",
         category = "Introduction",
-        title = "Adding Data",
+        title = "Functions",
         files =
           [
             {
-              solution = @inline(../assets/lessons/introduction/adding-data-solution.txt),
+              solution = @inline(../assets/lessons/introduction/functions-solution.txt),
               contents = @inline(../assets/lessons/introduction/basics.txt),
               title = "Main.mint",
               path = "Main.mint"

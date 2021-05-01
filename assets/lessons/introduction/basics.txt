@@ -1,5 +1,5 @@
 component Main {
-  fun render : String {
-    "Hello World!"
+  fun render : Html {
+    <h1>"Hello World!"</h1>
   }
 }
