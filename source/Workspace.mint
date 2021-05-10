@@ -62,6 +62,7 @@ component Workspace {
 
     > * > *:last-child {
       display: grid;
+      min-height: 0;
       padding: 0;
     }
   }

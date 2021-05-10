@@ -99,6 +99,36 @@ module Lessons {
               path = "Nested.mint"
             }
           ]
+      },
+      {
+        contents = <Lessons.ControlExpressions.If/>,
+        path = "/control-expressions/if",
+        category = "Control Expressions",
+        title = "If",
+        files =
+          [
+            {
+              solution = @inline(../assets/lessons/control-expressions/if-solution.txt),
+              contents = @inline(../assets/lessons/control-expressions/if.txt),
+              title = "Main.mint",
+              path = "Main.mint"
+            }
+          ]
+      },
+      {
+        contents = <Lessons.ControlExpressions.For/>,
+        path = "/control-expressions/for",
+        category = "Control Expressions",
+        title = "For",
+        files =
+          [
+            {
+              solution = @inline(../assets/lessons/control-expressions/for-solution.txt),
+              contents = @inline(../assets/lessons/control-expressions/for.txt),
+              title = "Main.mint",
+              path = "Main.mint"
+            }
+          ]
       }
     ]
 

@@ -1,0 +1,19 @@
+component Main {
+  state userLoggedIn : Bool = false
+
+  fun toggle : Promise(Never, Void) {
+    next { userLoggedIn = !userLoggedIn }
+  }
+
+  fun render : Html {
+    <div>
+      <button onClick={toggle}>
+        "Log out"
+      </button>
+
+      <button onClick={toggle}>
+        "Log in"
+      </button>
+    </div>
+  }
+}
