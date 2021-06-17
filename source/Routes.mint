@@ -9,7 +9,7 @@ routes {
 
       case (lesson) {
         Maybe::Nothing => Window.navigate("/introduction/basics")
-        Maybe::Just item => Application.setLesson(item)
+        Maybe::Just(item) => Application.setLesson(item)
       }
     }
   }
