@@ -129,6 +129,21 @@ module Lessons {
               path = "Main.mint"
             }
           ]
+      },
+      {
+        contents = <Lessons.ControlExpressions.Case/>,
+        path = "/control-expressions/case",
+        category = "Control Expressions",
+        title = "Case",
+        files =
+          [
+            {
+              solution = @inline(../assets/lessons/control-expressions/case-solution.txt),
+              contents = @inline(../assets/lessons/control-expressions/case.txt),
+              title = "Main.mint",
+              path = "Main.mint"
+            }
+          ]
       }
     ]
 
