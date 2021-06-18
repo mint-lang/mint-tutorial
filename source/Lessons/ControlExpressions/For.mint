@@ -16,18 +16,18 @@ component Lessons.ControlExpressions.For {
         " in Mint is an expression and not a statement, and becau" \
         "se of this it returns an "
 
-        <code>"Array(a)"</code>
+        <code>"Array(item)"</code>
         " where "
-        <code>"a"</code>
+        <code>"item"</code>
         " is type of the "
         <code>"expression"</code>
       </p>
 
       <p>
-        "For only can iterate through these types:"
-        <code>"Array(a)"</code>
+        "For only can iterate through these types: "
+        <code>"Array(item)"</code>
         ", "
-        <code>"Set(a)"</code>
+        <code>"Set(item)"</code>
         " and "
         <code>"Map(key,value)"</code>
       </p>
