@@ -74,7 +74,7 @@ store Application {
   /* Updates the source code of a file and compiles to get the preview URL. */
   fun updateValue (path : String, value : String) {
     if (Map.getWithDefault(path, "", values) == value) {
-      next {  }
+      next { }
     } else {
       sequence {
         next { values = Map.set(path, value, values) }
@@ -110,7 +110,7 @@ store Application {
 
       next { previewURL = Url.createObjectUrlFromString(compileResponse.body, "text/html") }
     } catch {
-      next {  }
+      next { }
     }
   }
 }
