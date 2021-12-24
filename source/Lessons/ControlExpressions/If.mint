@@ -1,33 +1,83 @@
-component Lessons.ControlExpressions.If {
-  fun render : Html {
-    <>
-      <p>
-        "As most other languages Mint has a structrue to return d" \
-        "ifferent values based on some condition."
-      </p>
+module Lessons {
+  const CONTROL_EXPRESSIONS_IF =
+    {
+      path = "/control-expressions/if",
+      category = "Control Expressions",
+      title = "If",
+      files =
+        [
+          {
+            solution =
+              <<~MINT
+              component Main {
+                state userLoggedIn : Bool = false
 
-      <p>"It looks like this:"</p>
+                fun toggle : Promise(Void) {
+                  next { userLoggedIn = !userLoggedIn }
+                }
 
-      <pre>
-        <code>"if (condition) {\n  ...\n} else {\n  ...\n}"</code>
-      </pre>
+                fun render : Html {
+                  <div>
+                    if (userLoggedIn) {
+                      <button onClick={toggle}>
+                        "Log out"
+                      </button>
+                    } else {
+                      <button onClick={toggle}>
+                        "Log in"
+                      </button>
+                    }
+                  </div>
+                }
+              }
+              MINT,
+            contents =
+              <<~MINT
+              component Main {
+                state userLoggedIn : Bool = false
 
-      <p>
-        "Unlike in some languages "
-        <code>"if"</code>
+                fun toggle : Promise(Void) {
+                  next { userLoggedIn = !userLoggedIn }
+                }
 
-        " in Mint is an expression and not a statement, and becau" \
-        "se of this both branches need to return something and th" \
-        "ose need to be of the same type."
-      </p>
+                fun render : Html {
+                  <div>
+                    <button onClick={toggle}>
+                      "Log out"
+                    </button>
 
-      <p>
-        "With this information you should be able update the code" \
-        " to display the correct button based on the "
+                    <button onClick={toggle}>
+                      "Log in"
+                    </button>
+                  </div>
+                }
+              }
+              MINT,
+            title = "Main.mint",
+            path = "Main.mint"
+          }
+        ],
+      contents =
+        <<#MARKDOWN
+        As most other languages Mint has a structrue to return different
+        values based on some condition.
 
-        <code>"userLoggedIn"</code>
-        " state."
-      </p>
-    </>
-  }
+        It looks like this:
+
+        ```
+        if (condition) {
+          ...
+        } else {
+          ...
+        }
+        ```
+
+        Unlike in some languages `if` in Mint is an expression and not a
+        statement, and because of this both branches need to return something
+        and those need to be of the same type.
+
+        With this information you should be able update the code to display the
+        correct button based on the `userLoggedIn` state.
+        MARKDOWN
+    }
 }

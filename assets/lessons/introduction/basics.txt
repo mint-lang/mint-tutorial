@@ -1,5 +1,0 @@
-component Main {
-  fun render : Html {
-    <h1>"Hello World!"</h1>
-  }
-}

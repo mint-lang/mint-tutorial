@@ -1,6 +1,0 @@
-case (number) {
-  0 => "Zero"
-  1 => "One"
-  2 => "Two"
-  => "Some other number" // This matches anything
-}

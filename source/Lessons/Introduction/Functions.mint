@@ -1,52 +1,70 @@
-component Lessons.Introduction.Functions {
-  fun render : Html {
-    <>
-      <p>
-        "Functions plays a central role in Mint. For instance, every component "
-        <strong>"must"</strong>
-        " have a "
-        <code>"render"</code>
-        " function. That's why it's crucial you have a good understanding of how they work."
-      </p>
+module Lessons {
+  const INTRODUCTION_FUNCTIONS =
+    {
+      path = "/introduction/functions",
+      category = "Introduction",
+      title = "Functions",
+      files =
+        [
+          {
+            solution =
+              <<~MINT
+              component Main {
+                fun render : Html {
+                  name =
+                    "World"
 
-      <p>
-        "In Mint, every function starts with a lowercase letter and must only contain
-    letters and numbers. The function must only contain a "
+                  <h1>"Hello \#{name}!"</h1>
+                }
+              }
+              MINT,
+            contents =
+              <<~MINT
+              component Main {
+                fun render : Html {
+                  <h1>"Hello World!"</h1>
+                }
+              }
+              MINT,
+            title = "Main.mint",
+            path = "Main.mint"
+          }
+        ],
+      contents =
+        <<#MARKDOWN
+        Functions plays a central role in Mint. For instance, every component
+        **must** have a `render` function. That's why it's crucial you have a
+        good under standing of how they work.
 
-        <strong>"single expression"</strong>
-        "."
-      </p>
+        In Mint, every function starts with a lowercase letter and must only
+        contain letters and numbers. It's body contains a number of
+        statements and expressions:
 
-      <p>"What does that mean? If you're coming from a language such as
-    JavaScript, the following example, while intuitive, won't compile:"</p>
+        ```
+        component Main {
+          fun render : Html {
+            name = "World"
 
-      <pre>
-        <code>"component Main {\n  fun render : Html {\n    name = \"World\"\n    <h1>\"Hello \#{name}!\"</h1>\n  }\n}"</code>
-      </pre>
+            <h1>"Hello \#{name}!"</h1>
+          }
+        }
+        ```
 
-      <p>
-        "You can't declare variables in the function body. Instead, we use a "
-        <code>"where"</code>
-        " block:"
-      </p>
+        We can even declare multiple variables at once:
 
-      <pre>
-        <code>"component Main {\n  fun render : Html {\n    <h1>\"Hello \#{name}!\"</h1>\n  } where {\n    name = \"World\"\n  }\n}"</code>
-      </pre>
+        ```
+        component Main {
+          fun render : Html {
+            greeting = "Howdy"
+            name = "World"
 
-      <p>"We can even declare multiple variables at once:"</p>
+            <h1>"\#{greeting} \#{name}!"</h1>
+          }
+        }
+        ```
 
-      <pre>
-        <code>"component Main {\n  fun render : Html {\n    <h1>\"\#{greeting}, \#{name}!\"</h1>\n  } where {\n    greeting = \"Howdy\"\n    name = \"World\"\n  }\n}"</code>
-      </pre>
-
-      <p>
-        "Let's give it a shot! Declare a "
-        <code>"name"</code>
-        " variable in your "
-        <code>"render"</code>
-        " function and replace the currently hardcoded greeting."
-      </p>
-    </>
-  }
+        Let's give it a shot! Declare a `name` variable in your `render`
+        function and replace the currently hardcoded greeting.
+        MARKDOWN
+    }
 }

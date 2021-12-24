@@ -1,8 +1,0 @@
-component Main {
-  fun render : Html {
-    <img/>
-  } where {
-    src =
-      "https://media.giphy.com/media/5kq0GCjHA8Rwc/giphy.gif"
-  }
-}

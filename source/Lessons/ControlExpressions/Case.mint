@@ -1,45 +1,96 @@
-component Lessons.ControlExpressions.Case {
-  fun render : Html {
-    <>
-      <p>
-        "The "
-        <code>"case"</code>
-        " expression allows us to say \"if the data has this shape then do that\", which we call "
-        <i>"pattern matching"</i>
-        "."
-      </p>
+module Lessons {
+  const CONTROL_EXPRESSIONS_CASE =
+    {
+      path = "/control-expressions/case",
+      category = "Control Expressions",
+      title = "Case",
+      files =
+        [
+          {
+            solution =
+              <<~MINT
+              component Main {
+                state number : Number = 0
 
-      <p>
-        "Here we match on a "
-        <code>"Number"</code>
-        " and return a specific string for the values "
-        <code>"0"</code>
-        ", "
-        <code>"1"</code>
-        ", and "
-        <code>"2"</code>
-        ". The final branch matches any other value that did not match any of the previous branches."
-      </p>
+                fun handleChange (event : Html.Event) {
+                  next { number = Number.fromString(event.target.getValue()) or 0 }
+                }
 
-      <pre>
-        <code>
-          <{ @inline(../../../assets/lessons/control-expressions/case-01.txt) }>
-        </code>
-      </pre>
+                fun render : Html {
+                  <div>
+                    <input
+                      value={number.toString()}
+                      onChange={handleChange}
+                      type="number"/>
 
-      <p>
-        "The "
-        <code>"case"</code>
-        " expression is more powerful than this simple example shows and will be covering it in other lessons."
-      </p>
+                    <p>
+                      case (number) {
+                        0 => "Zero"
+                        1 => "One"
+                        2 => "Two"
+                        3 => "Three"
+                        4 => "Four"
+                        => "Some other number" // This matches anything
+                      }
+                    </p>
+                  </div>
+                }
+              }
+              MINT,
+            contents =
+              <<~MINT
+              component Main {
+                state number : Number = 0
 
-      <p>
-        "As an exercise you can add the branches for "
-        <code>"3"</code>
-        " and "
-        <code>"4"</code>
-        "."
-      </p>
-    </>
-  }
+                fun handleChange (event : Html.Event) {
+                  next { number = Number.fromString(event.target.getValue()) or 0 }
+                }
+
+                fun render : Html {
+                  <div>
+                    <input
+                      value={number.toString()}
+                      onChange={handleChange}
+                      type="number"/>
+
+                    <p>
+                      case (number) {
+                        0 => "Zero"
+                        1 => "One"
+                        2 => "Two"
+                        => "Some other number" // This matches anything
+                      }
+                    </p>
+                  </div>
+                }
+              }
+              MINT,
+            title = "Main.mint",
+            path = "Main.mint"
+          }
+        ],
+      contents =
+        <<#MARKDOWN
+        The `case` expression allows us to say "if the data has this shape
+        then do that", which we call _pattern matching_.
+
+        Here we match on a `Number` and return a specific string for the
+        values `0`, `1`, and `2`. The final branch matches any other value
+        that did not match any of the previous branches.
+
+        ```
+        case (number) {
+          0 => "Zero"
+          1 => "One"
+          2 => "Two"
+          => "Some other number" // This matches anything
+        }
+        ```
+
+        The `case` expression is more powerful than this simple example shows
+        and will be covering it in other lessons.
+
+        As an exercise you can add the branches for `3` and `4`.
+        MARKDOWN
+    }
 }

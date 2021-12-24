@@ -31,52 +31,51 @@ store Application {
 
   /* Sets the lesson to the given one. */
   fun setLesson (lesson : Lesson) {
-    sequence {
-      next
-        {
-          previousLesson = Lessons.previousLesson(lesson),
-          nextLesson = Lessons.nextLession(lesson),
-          activeFile = lesson.files[0]&.path or "",
-          lesson = lesson,
-          values =
-            Map.fromArray(
-              for (file of lesson.files) {
-                {file.path, file.contents}
-              })
-        }
+    nextActiveFile =
+      Maybe.map((lesson : LessonFile) { lesson.path }, lesson.files[0])
 
-      compile()
-    }
+    next
+      {
+        previousLesson = Lessons.previousLesson(lesson),
+        nextLesson = Lessons.nextLession(lesson),
+        activeFile = nextActiveFile or "",
+        lesson = lesson,
+        values =
+          Map.fromArray(
+            for (file of lesson.files) {
+              ({file.path, file.contents})
+            })
+      }
+
+    compile()
   }
 
   /* Shows the soltion of the current lesson. */
   fun showSolution {
-    sequence {
-      next
-        {
-          values =
-            Map.fromArray(
-              for (file of lesson.files) {
-                {
-                  file.path, if (String.isNotBlank(file.solution)) {
-                    file.solution
-                  } else {
-                    file.contents
-                  }
+    next
+      {
+        values =
+          Map.fromArray(
+            for (file of lesson.files) {
+              ({
+                file.path, if (String.isNotBlank(file.solution)) {
+                  file.solution
+                } else {
+                  file.contents
                 }
               })
-        }
+            })
+      }
 
-      compile()
-    }
+    compile()
   }
 
   /* Updates the source code of a file and compiles to get the preview URL. */
-  fun updateValue (path : String, value : String) {
-    if (Map.getWithDefault(path, "", values) == value) {
-      next { }
-    } else {
-      sequence {
+  fun updateValue (path : String) {
+    (value : String) {
+      if (Map.getWithDefault(path, "", values) == value) {
+        next { }
+      } else {
         next { values = Map.set(path, value, values) }
         DEBOUNCED_COMPILE()
       }
@@ -87,30 +86,33 @@ store Application {
   const DEBOUNCED_COMPILE = Function.debounce(500, compile)
 
   /* Compiles the current state ito get the preview URL. */
-  fun compile {
-    sequence {
-      data =
-        encode {
-          files =
-            for (path, contents of values) {
-              {
-                contents = contents,
-                path = path
-              }
+  fun compile : Promise(Void) {
+    data =
+      encode {
+        files =
+          for (path, contents of values) {
+            {
+              contents = contents,
+              path = path
             }
-        }
+          }
+      }
 
-      compileResponse =
-        "https://mint-sandbox-compiler.herokuapp.com/compile"
-        |> Http.post()
-        |> Http.jsonBody(data)
-        |> Http.send()
+    // await "https://mint-sandbox-compiler.herokuapp.com/compile"
+    compileResponse =
+      await "http://localhost:3003/compile"
+      |> Http.post()
+      |> Http.jsonBody(data)
+      |> Http.send()
 
-      Url.revokeObjectUrl(previewURL)
+    Url.revokeObjectUrl(previewURL)
 
-      next { previewURL = Url.createObjectUrlFromString(compileResponse.body, "text/html") }
-    } catch {
-      next { }
+    case (compileResponse) {
+      Result::Ok(response) =>
+        next { previewURL = Url.createObjectUrlFromString(response.body, "text/html") }
+
+      Result::Err =>
+        next { }
     }
   }
 }

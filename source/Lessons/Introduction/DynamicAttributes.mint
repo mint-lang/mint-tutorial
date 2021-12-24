@@ -1,47 +1,71 @@
-component Lessons.Introduction.DynamicAttributes {
-  fun render : Html {
-    <>
-      <p>"You can use curly braces to control element or component attributes."</p>
+module Lessons {
+  const INTRODUCTION_DYNAMIC_ATTRIBUTES =
+    {
+      path = "/introduction/dynamic-attributes",
+      category = "Introduction",
+      title = "Dynamic Attributes",
+      files =
+        [
+          {
+            solution =
+              <<~MINT
+              component Main {
+                fun render : Html {
+                  src =
+                    "https://media.giphy.com/media/5kq0GCjHA8Rwc/giphy.gif"
 
-      <p>
-        "Our image is missing a "
-        <code>"src"</code>
-        " attribute — let's add one:"
-      </p>
+                  name =
+                    "Rick Astley"
 
-      <pre>
-        <code>"<img src={src}/>"</code>
-      </pre>
+                  <img src={src} alt="\#{name} dances."/>
+                }
+              }
+              MINT,
+            contents =
+              <<~MINT
+                component Main {
+                  fun render : Html {
+                    src =
+                      "https://media.giphy.com/media/5kq0GCjHA8Rwc/giphy.gif"
 
-      <p>
-        "When building web apps, it's important to make sure that" \
-        " they're accessible to the broadest possible userbase, i" \
-        "ncluding people with (for example) impaired vision or mo" \
-        "tion, or people without powerful hardware or good intern" \
-        "et connections."
-      </p>
+                    <img/>
+                  }
+                }
+                MINT,
+            title = "Main.mint",
+            path = "Main.mint"
+          }
+        ],
+      contents =
+        <<#MARKDOWN
+        You can use curly braces to control element or component attributes.
 
-      <p>
-        "To that end we should add the "
-        <code>"alt"</code>
+        Our image is missing a `src` attribute — let's add one:
 
-        " attribute that describes the image for people using scr" \
-        "eenreaders, or people with slow or flaky internet connec" \
-        "tions that can't download the image. Let's add it:"
-      </p>
+        ```
+        <img src={src}/>
+        ```
 
-      <pre>
-        <code>"<img src={src} alt=\"A man dances.\"/>"</code>
-      </pre>
+        When building web apps, it's important to make sure that they're
+        accessible to the broadest possible userbase, including people with
+        (for example) impaired vision or motion, or people without powerful
+        hardware or good internet connections.
 
-      <p>
-        "We can use interpolation inside attributes. Try changing it to "
-        <br/>
-        <code>"\"\#{name} dances.\""</code>
-        " — remember to declare a name variable in the "
-        <code>"where"</code>
-        " block."
-      </p>
-    </>
-  }
+        To that end we should add the `alt` attribute that describes the image
+        for people using screenreaders, or people with slow or flaky internet
+        connections that can't download the image. Let's add it:
+
+        ```
+        <img src={src} alt="A man dances."/>
+        ```
+
+        We can use interpolation inside attributes. Try changing it to:
+
+        ```
+        "\#{name} dances."
+        ```
+
+        — remember to declare a name variable.
+        MARKDOWN
+    }
 }

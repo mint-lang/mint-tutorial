@@ -111,82 +111,88 @@ component Workspace {
 
   /* Renders the component. */
   fun render : Html {
-    try {
-      solutionLessons =
-        Array.select(
-          (file : LessonFile) {
-            String.isNotBlank(file.solution)
-          },
-          lesson.files)
+    solutionLessons =
+      Array.select(
+        (file : LessonFile) {
+          String.isNotBlank(file.solution)
+        },
+        lesson.files)
 
-      hasSolution =
-        !Array.isEmpty(solutionLessons)
+    hasSolution =
+      !Array.isEmpty(solutionLessons)
 
-      isSolution =
-        Array.any(
-          (file : LessonFile) {
-            Map.getWithDefault(file.path, "", values) == file.solution
-          },
-          solutionLessons)
+    isSolution =
+      Array.any(
+        (file : LessonFile) {
+          Map.getWithDefault(file.path, "", values) == file.solution
+        },
+        solutionLessons)
 
-      <div::base>
-        <div::sidebar>
-          <div::navigation>
-            <Ui.Button
-              disabled={Maybe::Nothing == previousLesson&.path}
-              iconAfter={Ui.Icons:DOUBLE_CHEVRON_LEFT}
-              href={previousLesson&.path or "/"}
-              type="faded"/>
+    prevLessonPath =
+      Maybe.map((lesson : Lesson) { lesson.path }, previousLesson)
 
-            <Ui.Native.Select
-              onChange={Window.navigate}
-              items={Lessons:LIST_ITEMS}
-              value={lesson.path}/>
+    nextLessonPath =
+      Maybe.map((lesson : Lesson) { lesson.path }, nextLesson)
 
-            <Ui.Button
-              disabled={Maybe::Nothing == nextLesson&.path}
-              iconAfter={Ui.Icons:DOUBLE_CHEVRON_RIGHT}
-              href={nextLesson&.path or "/"}
-              type="faded"/>
-          </div>
+    <div::base>
+      <div::sidebar>
+        <div::navigation>
+          <Ui.Button
+            disabled={Maybe::Nothing == prevLessonPath}
+            iconAfter={Ui.Icons:DOUBLE_CHEVRON_LEFT}
+            href={prevLessonPath or "/"}
+            type="faded"/>
 
-          <Ui.ScrollPanel maxSize={1000}>
-            <div::instructions>
-              <Ui.Content>
-                <{ lesson.contents }>
-              </Ui.Content>
-            </div>
-          </Ui.ScrollPanel>
+          <Ui.Native.Select
+            onChange={Window.navigate}
+            items={Lessons:LIST_ITEMS}
+            value={lesson.path}/>
 
-          <div::toolbar>
-            <Ui.DarkModeToggle/>
-
-            <Ui.Container>
-              if (hasSolution) {
-                if (isSolution) {
-                  <{  }>
-                } else {
-                  <Ui.Button
-                    onClick={handleShowSolution}
-                    iconAfter={Ui.Icons:EYE}
-                    label="Show Me"
-                    type="danger"
-                    href=""/>
-                }
-              }
-
-              <Ui.Button
-                disabled={Maybe::Nothing == nextLesson&.path}
-                iconAfter={Ui.Icons:CHEVRON_RIGHT}
-                href={nextLesson&.path or "/"}
-                type="faded"
-                label="Next"/>
-            </Ui.Container>
-          </div>
+          <Ui.Button
+            disabled={Maybe::Nothing == nextLessonPath}
+            iconAfter={Ui.Icons:DOUBLE_CHEVRON_RIGHT}
+            href={nextLessonPath or "/"}
+            type="faded"/>
         </div>
 
-        <div::editor>
-          try {
+        <Ui.ScrollPanel maxSize={1000}>
+          <div::instructions>
+            <Ui.Content>
+              <{ lesson.contents }>
+            </Ui.Content>
+          </div>
+        </Ui.ScrollPanel>
+
+        <div::toolbar>
+          <Ui.DarkModeToggle/>
+
+          <Ui.Container>
+            if (hasSolution) {
+              if (isSolution) {
+                <{  }>
+              } else {
+                <Ui.Button
+                  onClick={handleShowSolution}
+                  iconAfter={Ui.Icons:EYE}
+                  label="Show Me"
+                  type="danger"
+                  href=""/>
+              }
+            }
+
+            <Ui.Button
+              disabled={Maybe::Nothing == nextLessonPath}
+              iconAfter={Ui.Icons:CHEVRON_RIGHT}
+              href={nextLessonPath or "/"}
+              type="faded"
+              label="Next"/>
+          </Ui.Container>
+        </div>
+      </div>
+
+      <div::editor>
+        <{
+          {
             tabs =
               for (file of lesson.files) {
                 {
@@ -225,12 +231,12 @@ component Workspace {
               breakpoint={400}
               items={tabs}/>
           }
-        </div>
-
-        <div>
-          <iframe::iframe src={previewURL}/>
-        </div>
+        }>
       </div>
-    }
+
+      <div>
+        <iframe::iframe src={previewURL}/>
+      </div>
+    </div>
   }
 }
