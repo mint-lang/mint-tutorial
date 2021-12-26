@@ -1,0 +1,50 @@
+module Lessons {
+  const COMPONENTS_BASICS =
+    {
+      path = "/components/components",
+      category = "Components",
+      title = "Basics",
+      files =
+        [
+          {
+            title = "Main.mint",
+            path = "Main.mint",
+            solution = "",
+            contents =
+              <<~MINT
+              component Main {
+                fun render : Html {
+                  <div>
+                    "This is the content of a component!"
+                  </div>
+                }
+              }
+              MINT
+          }
+        ],
+      contents =
+        <<#MARKDOWN
+        We start with **components** because in this tutorial we showcase
+        language features using them.
+
+        A **component** is a collection of UI elements which together a serve
+        specific function. You can think of buttons, checkboxes, selects, images,
+        etc... as components.
+
+        ## The Main Component
+
+        There is a special component called `Main`, which is the root element
+        and it's displayed on the screen. All other components will be added
+        to this component.
+
+        ## The Render Function
+
+        All components **must have** a **render function**. This functions tells
+        the browser what to display. It can return a single HTML tag, a string
+        or an array of them.
+
+        We will mostly use this function in the first chapter.
+
+        MARKDOWN
+    }
+}

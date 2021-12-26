@@ -1,8 +1,8 @@
 module Lessons {
-  const INTRODUCTION_STYLING =
+  const COMPONENTS_STYLING =
     {
-      path = "/introduction/styling",
-      category = "Introduction",
+      path = "/components/styling",
+      category = "Components",
       title = "Styling",
       files =
         [

@@ -1,8 +1,8 @@
 module Lessons {
-  const INTRODUCTION_COMPOSITION =
+  const COMPONENTS_COMPOSITION =
     {
-      path = "/introduction/composition",
-      category = "Introduction",
+      path = "/components/composition",
+      category = "Components",
       title = "Composition",
       files =
         [

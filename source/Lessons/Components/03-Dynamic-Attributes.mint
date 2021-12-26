@@ -1,8 +1,8 @@
 module Lessons {
-  const INTRODUCTION_DYNAMIC_ATTRIBUTES =
+  const COMPONENTS_DYNAMIC_ATTRIBUTES =
     {
-      path = "/introduction/dynamic-attributes",
-      category = "Introduction",
+      path = "/components/dynamic-attributes",
+      category = "Components",
       title = "Dynamic Attributes",
       files =
         [

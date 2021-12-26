@@ -1,9 +1,9 @@
 module Lessons {
-  const INTRODUCTION_BASICS =
+  const INTRODUCTION =
     {
-      path = "/introduction/basics",
+      path = "/introduction",
       category = "Introduction",
-      title = "Basics",
+      title = "",
       files =
         [
           {
@@ -13,8 +13,30 @@ module Lessons {
             contents =
               <<~MINT
               component Main {
-                fun render : Html {
-                  <h1>"Hello World!"</h1>
+                state counter = 0
+
+                fun increment {
+                  next { counter = counter + 1 }
+                }
+
+                fun decrement {
+                  next { counter = counter - 1 }
+                }
+
+                fun render {
+                  <div>
+                    <button onClick={decrement}>
+                      "Decrement"
+                    </button>
+
+                    <span>
+                      <{ Number.toString(counter) }>
+                    </span>
+
+                    <button onClick={increment}>
+                      "Increment"
+                    </button>
+                  </div>
                 }
               }
               MINT
@@ -59,17 +81,18 @@ module Lessons {
           ## What is Mint?
 
           Mint is a language specifically created for writing **single-page
-          applications**
+          web applications**.
 
           It provides you with all the necessary tooling to write **error free**,
-          **readable**, and **maintainable** applications.
+          **readable**, and **maintainable** software.
 
           Mint is strongly typed, and compiles to JavaScript. This means your
           code is less prone to errors, easier to maintain, and benefit from
           optimizations done by the Mint compiler.
 
-          While we recommend you to use Mint to build entire applications,
-          it can also be added incrementally to an existing codebase.
+          It's recommend you to use Mint to build entire applications, but it
+          can also be added incrementally to an existing codebase using
+          **web components**.
 
           ## How to use this tutorial
 
@@ -80,7 +103,7 @@ module Lessons {
           exercises designed to illustrate new features. Later chapters build on
           the knowledge gained in earlier ones, so it's recommended that you go
           from start to finish. If necessary, you can navigate via the dropdown
-          above (click 'Introduction / Basics').
+          above (click 'Introduction').
 
           Each tutorial chapter will have a #{button} button that you can click
           if you get stuck following the instructions.

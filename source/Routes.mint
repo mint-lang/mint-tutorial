@@ -7,7 +7,7 @@ routes {
       Array.find((lesson : Lesson) { lesson.path == path }, Lessons:ITEMS)
 
     case (lesson) {
-      Maybe::Nothing => Window.navigate("/introduction/basics")
+      Maybe::Nothing => Window.navigate("/introduction")
       Maybe::Just(item) => Application.setLesson(item)
     }
   }

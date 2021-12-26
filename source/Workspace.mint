@@ -34,6 +34,13 @@ component Workspace {
     padding: 1.5em;
   }
 
+  style empty {
+    background: var(--content-color);
+    grid-row: span 2;
+    grid-column: 2;
+    display: grid;
+  }
+
   /* The style for the sidebar. */
   style sidebar {
     border-right: 1px solid var(--content-border);
@@ -190,53 +197,70 @@ component Workspace {
         </div>
       </div>
 
-      <div::editor>
-        <{
-          {
-            tabs =
-              for (file of lesson.files) {
-                {
-                  content =
-                    <CodeMirror
-                      value={Map.get(file.path, values) or file.contents}
-                      onChange={updateValue(file.path)}
-                      javascripts=[
-                        @asset(../assets/codemirror.min.js),
-                        @asset(../assets/codemirror.simple-mode.js),
-                        @asset(../assets/codemirror.mint.js)
-                      ]
-                      styles=[
-                        @asset(../assets/codemirror.min.css),
-                        @asset(../assets/codemirror.light.css),
-                        @asset(../assets/codemirror.dark.css)
-                      ]
-                      theme={
-                        if (darkMode) {
-                          "dark"
-                        } else {
-                          "light"
-                        }
-                      }
-                      mode="mint"/>,
-                  iconBefore = Ui.Icons:FILE_CODE,
-                  iconAfter = <></>,
-                  label = file.title,
-                  key = file.path
-                }
+      if (lesson.files.isEmpty()) {
+        <div::empty>
+          <Ui.IllustratedMessage
+            subtitle=<{ "This chapter does not have an interactive example." }>
+            title=<{ "Read and Relax" }>
+            image=<{
+              <Ui.Icon
+                size={Ui.Size::Em(10)}
+                icon={Ui.Icons:BOOK}/>
+            }>/>
+        </div>
+      } else {
+        <>
+          <div::editor>
+            <{
+              {
+                tabs =
+                  for (file of lesson.files) {
+                    {
+                      content =
+                        <div style="display:grid;min-height:0;">
+                          <CodeMirror
+                            value={Map.get(file.path, values) or file.contents}
+                            onChange={updateValue(file.path)}
+                            javascripts=[
+                              @asset(../assets/codemirror.min.js),
+                              @asset(../assets/codemirror.simple-mode.js),
+                              @asset(../assets/codemirror.mint.js)
+                            ]
+                            styles=[
+                              @asset(../assets/codemirror.min.css),
+                              @asset(../assets/codemirror.light.css),
+                              @asset(../assets/codemirror.dark.css)
+                            ]
+                            theme={
+                              if (darkMode) {
+                                "dark"
+                              } else {
+                                "light"
+                              }
+                            }
+                            mode="mint"/>
+                        </div>,
+                      iconBefore = Ui.Icons:FILE_CODE,
+                      iconAfter = <></>,
+                      label = file.title,
+                      key = file.path
+                    }
+                  }
+
+                <Ui.Tabs
+                  active={activeFile}
+                  onChange={setFile}
+                  breakpoint={400}
+                  items={tabs}/>
               }
+            }>
+          </div>
 
-            <Ui.Tabs
-              active={activeFile}
-              onChange={setFile}
-              breakpoint={400}
-              items={tabs}/>
-          }
-        }>
-      </div>
-
-      <div>
-        <iframe::iframe src={previewURL}/>
-      </div>
+          <div>
+            <iframe::iframe src={previewURL}/>
+          </div>
+        </>
+      }
     </div>
   }
 }

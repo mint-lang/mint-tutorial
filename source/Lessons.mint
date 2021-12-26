@@ -15,21 +15,33 @@ module Lessons {
 
   const ITEMS =
     [
-      INTRODUCTION_BASICS,
-      INTRODUCTION_FUNCTIONS,
-      INTRODUCTION_DYNAMIC_ATTRIBUTES,
-      INTRODUCTION_STYLING,
-      INTRODUCTION_COMPOSITION,
+      INTRODUCTION,
+      LANGUAGE_TYPES,
+      LANGUAGE_LITERALS,
+      LANGUAGE_STRINGS,
+      LANGUAGE_FUNCTIONS,
+      LANGUAGE_FUNCTION_ARGUMENTS,
       CONTROL_EXPRESSIONS_IF,
       CONTROL_EXPRESSIONS_FOR,
       CONTROL_EXPRESSIONS_CASE,
+      COMPONENTS_BASICS,
+      COMPONENTS_DYNAMIC_ATTRIBUTES,
+      COMPONENTS_STYLING,
+      COMPONENTS_COMPOSITION
     ]
 
   const LIST_ITEMS =
     for (item of ITEMS) {
+      title =
+        if (item.title.isNotBlank()) {
+          "#{item.category} / #{item.title}"
+        } else {
+          item.category
+        }
+
       Ui.ListItem::Item(
-        content = <{ "#{item.category} / #{item.title}" }>,
-        matchString = "#{item.category} / #{item.title}",
+        content = <{ title }>,
+        matchString = title,
         key = item.path)
     }
 }

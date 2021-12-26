@@ -76,7 +76,7 @@ module Lessons {
         As most other languages Mint has a structrue to iterate over certain
         data structures.
 
-        It looks like this:
+        It's the `for` block and it looks like this:
 
         ```
         for (item of iterable) {
@@ -86,10 +86,24 @@ module Lessons {
 
         Unlike in some languages `for` in Mint is an expression and not a
         statement, and because of this it returns an `Array(item)` where
-        `item` is the type of the `expression`.
+        `item` is the type of the last `expression`.
 
-        For only can iterate through these types: `Array(item)`, `Set(item)`,
+        Currently it only can iterate through these types: `Array(item)`, `Set(item)`,
         and `Map(key,value)`.
+
+        ## Filtering using `when`
+
+        The `for` block can filter an array based on some condition specified
+        in a `where` block:
+
+        ```
+        // This returns [0,2,4]
+        for (number of [0,1,2,3,4]) {
+          number
+        } when {
+          (number % 2) == 0
+        }
+        ```
         MARKDOWN
     }
 }

@@ -1,8 +1,8 @@
 module Lessons {
-  const INTRODUCTION_FUNCTIONS =
+  const LANGUAGE_FUNCTIONS =
     {
-      path = "/introduction/functions",
-      category = "Introduction",
+      path = "/language/functions",
+      category = "Language",
       title = "Functions",
       files =
         [
@@ -36,9 +36,12 @@ module Lessons {
         **must** have a `render` function. That's why it's crucial you have a
         good under standing of how they work.
 
-        In Mint, every function starts with a lowercase letter and must only
-        contain letters and numbers. It's body contains a number of
-        statements and expressions:
+        In Mint, every function starts with the `fun` keyword followed by the
+        name (a lowercase letter followed by letters and numbers). After the
+        name (or arguments) is the definition for the return type of the
+        function.
+
+        The function's body contains a number of statements and expressions:
 
         ```
         component Main {
