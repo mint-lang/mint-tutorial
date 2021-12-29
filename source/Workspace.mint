@@ -99,7 +99,7 @@ component Workspace {
   style navigation {
     border-bottom: 0.1875em solid var(--content-border);
     box-sizing: border-box;
-    padding: 0.75em 1.5em;
+    padding: 0.65em 1.5em;
 
     grid-template-columns: auto 1fr auto;
     grid-gap: 1em;

@@ -94,7 +94,7 @@ module Lessons {
         ## Filtering using `when`
 
         The `for` block can filter an array based on some condition specified
-        in a `where` block:
+        in a `when` block:
 
         ```
         // This returns [0,2,4]
@@ -104,6 +104,8 @@ module Lessons {
           (number % 2) == 0
         }
         ```
+
+        Let's display the links of the cat videos usin a `for` expression.
         MARKDOWN
     }
 }

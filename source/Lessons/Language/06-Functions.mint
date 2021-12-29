@@ -36,10 +36,9 @@ module Lessons {
         **must** have a `render` function. That's why it's crucial you have a
         good under standing of how they work.
 
-        In Mint, every function starts with the `fun` keyword followed by the
-        name (a lowercase letter followed by letters and numbers). After the
-        name (or arguments) is the definition for the return type of the
-        function.
+        In Mint, every function starts with the `fun` keyword then name (a
+        lowercase letter followed by letters and numbers). After the name (or
+        arguments) is the definition for the return type of the function.
 
         The function's body contains a number of statements and expressions:
 

@@ -14,7 +14,7 @@ module Lessons {
               <<~MINT
               component Main {
                 fun render : Html {
-                  <>"Hello World!"</>
+                  <div>"Hello World!"</div>
                 }
               }
               MINT

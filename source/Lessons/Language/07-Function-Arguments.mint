@@ -34,7 +34,7 @@ module Lessons {
                   <h1>
                     <{ greet() }>
                     <br/>
-                    <{ greet("Joe") }>
+                    /* <{ greet("Joe") }> */
                   </h1>
                 }
               }
@@ -68,7 +68,7 @@ module Lessons {
 
         Let's change the `greet` function to take an argument for the name and
         use that in the return value! Don't forget to add a default argument
-        to make both calls work.
+        to make both calls work and uncomment the second greeting!
         MARKDOWN
     }
 }
