@@ -28,20 +28,13 @@ module Lessons {
         specific function. You can think of buttons, checkboxes, selects, images,
         etc... as components.
 
-        ### The Render Function
-
         All components **must have** a **render function**. This functions tells
         the browser what to display. It can return a single HTML tag, a string
         or an array of them.
 
-        ### The Main Component
-
         There is a special component called `Main`, which is the root element
         and it's displayed on the screen. All other components will be added
         to this component.
-
-
-
         MARKDOWN
     }
 }

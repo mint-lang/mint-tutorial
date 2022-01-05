@@ -57,7 +57,7 @@ module Lessons {
                     }
 
                   updatedUser =
-                    { user | email = "Jane Doe"}
+                    { user | name = "Jane Doe"}
 
                   <div>
                     "Hello \#{updatedUser.name} at \#{updatedUser.email}!"

@@ -9,6 +9,14 @@ module Lessons {
           {
             solution =
               <<~MINT
+              component Greeter {
+                property name : String = "World"
+
+                fun render : Html {
+                  <p>"Hello \#{name}!"</p>
+                }
+              }
+
               component Main {
                 fun render : Html {
                   <div>
@@ -19,6 +27,12 @@ module Lessons {
               MINT,
             contents =
               <<~MINT
+              component Greeter {
+                fun render : Html {
+                  <p>"Hello World!"</p>
+                }
+              }
+
               component Main {
                 fun render : Html {
                   <div>
@@ -29,28 +43,6 @@ module Lessons {
               MINT,
             title = "Main.mint",
             path = "Main.mint"
-          },
-          {
-            contents =
-              <<~MINT
-              component Greeter {
-                fun render : Html {
-                  <p>"Hello World!"</p>
-                }
-              }
-              MINT,
-            solution =
-              <<~MINT
-              component Greeter {
-                property name : String = "World"
-
-                fun render : Html {
-                  <p>"Hello \#{name}!"</p>
-                }
-              }
-              MINT,
-            title = "Greeter.mint",
-            path = "Greeter.mint"
           }
         ],
       contents =
@@ -75,8 +67,8 @@ module Lessons {
         property name : String  // The property is required
         ```
 
-        If the passed property
-
+        If the passed property doesn't match it's given type then you will get
+        a compile error.
         MARKDOWN
     }
 }
