@@ -61,7 +61,7 @@ component Workspace {
     display: grid;
 
     background-color: var(--content-color);
-    padding-top: 7px;
+    padding-top: 8px;
 
     .CodeMirror {
       height: auto;

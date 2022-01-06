@@ -4,42 +4,35 @@ module Lessons {
       path = "/components/computed-properties",
       title = "Computed Properties",
       category = "Components",
-      files =
-        [
-          {
-            title = "Main.mint",
-            path = "Main.mint",
-            solution = "",
-            contents =
-              <<~MINT
-              component Greeter {
-                property name : String = ""
-
-                get text : String {
-                  "Hello " + name + "!"
-                }
-
-                fun render : Html {
-                  <div>
-                    <{ text }>
-                  </div>
-                }
-              }
-
-              component Main {
-                fun render {
-                  <div>
-                    <Greeter name="Joe"/>
-                  </div>
-                }
-              }
-              MINT
-          }
-        ],
+      files = [],
       contents =
         <<#MARKDOWN
         Computed properties are functions that work like properties, they are
         defined with the `get` keyword and don't have any arguments.
+
+        ```
+        component Greeter {
+          property name : String = ""
+
+          get text : String {
+            "Hello " + name + "!"
+          }
+
+          fun render : Html {
+            <div>
+              <{ text }>
+            </div>
+          }
+        }
+
+        component Main {
+          fun render {
+            <div>
+              <Greeter name="Joe"/>
+            </div>
+          }
+        }
+        ```
         MARKDOWN
     }
 }
