@@ -1,6 +1,6 @@
 {
   "name": "mint-tutorial",
-  "mint-version": "0.16.0 <= v < 1.0.0",
+  "mint-version": "0.17.0 <= v < 1.0.0",
   "application": {
     "head": "assets/head.html",
     "title": "Mint Tutorial"
@@ -11,11 +11,15 @@
   "dependencies": {
     "mint-ui": {
       "repository": "https://github.com/mint-lang/mint-ui",
-      "constraint": "5.0.0 <= v < 6.0.0"
+      "constraint": "6.0.0 <= v < 7.0.0"
     },
     "mint-codemirror": {
       "repository": "https://github.com/mint-lang/mint-codemirror",
-      "constraint": "7.0.0 <= v < 8.0.0"
+      "constraint": "8.0.0 <= v < 9.0.0"
+    },
+    "mint-tabler-icons": {
+      "repository": "https://github.com/mint-lang/mint-tabler-icons",
+      "constraint": "master:1.0.0"
     }
   }
 }

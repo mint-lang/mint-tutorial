@@ -1,0 +1,80 @@
+module Lessons {
+  const LANGUAGE_MODULES =
+    {
+      path: "/language/modules",
+      category: "Language",
+      title: "Modules",
+      files:
+        [
+          {
+            title: "Main.mint",
+            path: "Main.mint",
+            solution: "",
+            contents:
+              <<~MINT
+              module Greeter {
+                fun greet (name : String = "World") : String {
+                  "Hello \#{name}!"
+                }
+              }
+
+              component Main {
+                fun render : Html {
+                  <div>
+                    <{ Greeter.greet() }>
+                  </div>
+                }
+              }
+              MINT
+          }
+        ],
+      contents:
+        <<#MARKDOWN
+        Modules are top level entities used for grouping related functions and
+        constants together.
+
+        They are usually used to gather functions that relate to a specific
+        type (like `String` or `Number`).
+
+        You can call the functions of a module by using the modules name:
+
+        ```
+        Greeter.greet("Joe") /* "Hello Joe" */
+        ```
+
+        You can omit the name of the module if you are calling a function from
+        another function in the same module:
+
+        ```
+        module Greeter {
+          fun greet (name : String) : String {
+            "Hello \#{name}!"
+          }
+
+          fun greetUpperCase (name : String) : String {
+            greet(String.toUpperCase(name))
+          }
+        }
+        ```
+
+        Modules are _open_ meaning that you can define additional functions in
+        different places:
+
+        ```
+        module Greeter {
+          fun greet (name : String) : String {
+            "Hello \#{name}!"
+          }
+        }
+
+        module Greeter {
+          fun greetUpperCase (name : String) : String {
+            greet(String.toUpperCase(name))
+          }
+        }
+        ```
+
+        It's useful if you want to extend modules in the standar library.
+        MARKDOWN
+    }
+}

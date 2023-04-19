@@ -32,6 +32,14 @@ component Workspace {
   /* The style for the instructions. */
   style instructions {
     padding: 1.5em;
+    --tabler-stroke-width: 3;
+  }
+
+  style empty {
+    background: var(--content-color);
+    grid-row: span 2;
+    grid-column: 2;
+    display: grid;
   }
 
   /* The style for the sidebar. */
@@ -54,7 +62,7 @@ component Workspace {
     display: grid;
 
     background-color: var(--content-color);
-    padding-top: 7px;
+    padding-top: 8px;
 
     .CodeMirror {
       height: auto;
@@ -86,13 +94,15 @@ component Workspace {
     grid-auto-flow: column;
     align-items: center;
     display: grid;
+
+    --tabler-stroke-width: 3;
   }
 
   /* Styles for the navigation. */
   style navigation {
     border-bottom: 0.1875em solid var(--content-border);
     box-sizing: border-box;
-    padding: 0.75em 1.5em;
+    padding: 0.65em 1.5em;
 
     grid-template-columns: auto 1fr auto;
     grid-gap: 1em;
@@ -111,126 +121,149 @@ component Workspace {
 
   /* Renders the component. */
   fun render : Html {
-    try {
-      solutionLessons =
-        Array.select(
-          (file : LessonFile) {
-            String.isNotBlank(file.solution)
-          },
-          lesson.files)
+    let solutionLessons =
+      Array.select(
+        lesson.files,
+        (file : LessonFile) {
+          String.isNotBlank(file.solution)
+        })
 
-      hasSolution =
-        !Array.isEmpty(solutionLessons)
+    let hasSolution =
+      !Array.isEmpty(solutionLessons)
 
-      isSolution =
-        Array.any(
-          (file : LessonFile) {
-            Map.getWithDefault(file.path, "", values) == file.solution
-          },
-          solutionLessons)
+    let isSolution =
+      Array.any(
+        solutionLessons,
+        (file : LessonFile) {
+          Map.getWithDefault(values, file.path, "") == file.solution
+        })
 
-      <div::base>
-        <div::sidebar>
-          <div::navigation>
-            <Ui.Button
-              disabled={Maybe::Nothing == previousLesson&.path}
-              iconAfter={Ui.Icons:DOUBLE_CHEVRON_LEFT}
-              href={previousLesson&.path or "/"}
-              type="faded"/>
+    let prevLessonPath =
+      Maybe.map(previousLesson, (lesson : Lesson) { lesson.path })
 
-            <Ui.Native.Select
-              onChange={Window.navigate}
-              items={Lessons:LIST_ITEMS}
-              value={lesson.path}/>
+    let nextLessonPath =
+      Maybe.map(nextLesson, (lesson : Lesson) { lesson.path })
 
-            <Ui.Button
-              disabled={Maybe::Nothing == nextLesson&.path}
-              iconAfter={Ui.Icons:DOUBLE_CHEVRON_RIGHT}
-              href={nextLesson&.path or "/"}
-              type="faded"/>
-          </div>
+    <div::base>
+      <div::sidebar>
+        <div::navigation>
+          <Ui.Button
+            disabled={Maybe::Nothing == prevLessonPath}
+            iconAfter={Ui.Icons:DOUBLE_CHEVRON_LEFT}
+            href={prevLessonPath or "/"}
+            type="faded"/>
 
-          <Ui.ScrollPanel maxSize={1000}>
-            <div::instructions>
-              <Ui.Content>
-                <{ lesson.contents }>
-              </Ui.Content>
-            </div>
-          </Ui.ScrollPanel>
+          <Ui.Native.Select
+            onChange={Window.navigate}
+            items={Lessons:LIST_ITEMS}
+            value={lesson.path}/>
 
-          <div::toolbar>
-            <Ui.DarkModeToggle/>
-
-            <Ui.Container>
-              if (hasSolution) {
-                if (isSolution) {
-                  <{  }>
-                } else {
-                  <Ui.Button
-                    onClick={handleShowSolution}
-                    iconAfter={Ui.Icons:EYE}
-                    label="Show Me"
-                    type="danger"
-                    href=""/>
-                }
-              }
-
-              <Ui.Button
-                disabled={Maybe::Nothing == nextLesson&.path}
-                iconAfter={Ui.Icons:CHEVRON_RIGHT}
-                href={nextLesson&.path or "/"}
-                type="faded"
-                label="Next"/>
-            </Ui.Container>
-          </div>
+          <Ui.Button
+            disabled={Maybe::Nothing == nextLessonPath}
+            iconAfter={Ui.Icons:DOUBLE_CHEVRON_RIGHT}
+            href={nextLessonPath or "/"}
+            type="faded"/>
         </div>
 
-        <div::editor>
-          try {
-            tabs =
-              for (file of lesson.files) {
-                {
-                  content =
-                    <CodeMirror
-                      value={Map.get(file.path, values) or file.contents}
-                      onChange={updateValue(file.path)}
-                      javascripts=[
-                        @asset(../assets/codemirror.min.js),
-                        @asset(../assets/codemirror.simple-mode.js),
-                        @asset(../assets/codemirror.mint.js)
-                      ]
-                      styles=[
-                        @asset(../assets/codemirror.min.css),
-                        @asset(../assets/codemirror.light.css),
-                        @asset(../assets/codemirror.dark.css)
-                      ]
-                      theme={
-                        if (darkMode) {
-                          "dark"
-                        } else {
-                          "light"
-                        }
-                      }
-                      mode="mint"/>,
-                  iconBefore = Ui.Icons:FILE_CODE,
-                  iconAfter = <></>,
-                  label = file.title,
-                  key = file.path
-                }
+        <Ui.ScrollPanel maxSize={1000}>
+          <div::instructions>
+            <Ui.Content>
+              <{ lesson.contents }>
+            </Ui.Content>
+          </div>
+        </Ui.ScrollPanel>
+
+        <div::toolbar>
+          <Ui.DarkModeToggle/>
+
+          <Ui.Container>
+            if (hasSolution) {
+              if (isSolution) {
+                <{  }>
+              } else {
+                <Ui.Button
+                  onClick={handleShowSolution}
+                  iconAfter={TablerIcons:EYE}
+                  label="Show Me"
+                  type="danger"
+                  href=""/>
               }
+            }
 
-            <Ui.Tabs
-              active={activeFile}
-              onChange={setFile}
-              breakpoint={400}
-              items={tabs}/>
-          }
-        </div>
-
-        <div>
-          <iframe::iframe src={previewURL}/>
+            <Ui.Button
+              disabled={Maybe::Nothing == nextLessonPath}
+              iconAfter={Ui.Icons:CHEVRON_RIGHT}
+              href={nextLessonPath or "/"}
+              type="faded"
+              label="Next"/>
+          </Ui.Container>
         </div>
       </div>
-    }
+
+      if (Array.isEmpty(lesson.files)) {
+        <div::empty>
+          <Ui.IllustratedMessage
+            subtitle=<{ "This chapter does not have an interactive example." }>
+            title=<{ "Read and Relax" }>
+            image=<{
+              <Ui.Icon
+                icon={TablerIcons:BOOK}
+                size={Ui.Size::Em(10)}/>
+            }>/>
+        </div>
+      } else {
+        <>
+          <div::editor>
+            <{
+              {
+                let tabs =
+                  for (file of lesson.files) {
+                    {
+                      content:
+                        <div style="display:grid;min-height:0;">
+                          <CodeMirror
+                            value={Map.get(values, file.path) or file.contents}
+                            onChange={updateValue(file.path)}
+                            javascripts=[
+                              @asset(../assets/codemirror.min.js),
+                              @asset(../assets/codemirror.simple-mode.js),
+                              @asset(../assets/codemirror.mint.js)
+                            ]
+                            styles=[
+                              @asset(../assets/codemirror.min.css),
+                              @asset(../assets/codemirror.light.css),
+                              @asset(../assets/codemirror.dark.css)
+                            ]
+                            theme={
+                              if (darkMode) {
+                                "dark"
+                              } else {
+                                "light"
+                              }
+                            }
+                            mode="mint"/>
+                        </div>,
+                      iconBefore: <></>,
+                      iconAfter: <></>,
+                      label: file.title,
+                      key: file.path
+                    }
+                  }
+
+                <Ui.Tabs
+                  active={activeFile}
+                  onChange={setFile}
+                  breakpoint={400}
+                  items={tabs}/>
+              }
+            }>
+          </div>
+
+          <div>
+            <iframe::iframe src={previewURL}/>
+          </div>
+        </>
+      }
+    </div>
   }
 }
