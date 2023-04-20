@@ -42,7 +42,7 @@ module Lessons {
 
         The function's body contains a number of statements and expressions:
 
-        ```
+        ```mint
         component Main {
           fun render : Html {
             let name =
@@ -55,7 +55,7 @@ module Lessons {
 
         We can even declare multiple variables at once:
 
-        ```
+        ```mint
         component Main {
           fun render : Html {
             let greeting =

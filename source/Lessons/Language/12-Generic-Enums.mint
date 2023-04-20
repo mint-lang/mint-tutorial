@@ -45,7 +45,7 @@ module Lessons {
 
         An example for this is the `Result` enum:
 
-        ```
+        ```mint
         enum Result(error, value) {
           Err(error)
           Ok(value)
@@ -55,7 +55,7 @@ module Lessons {
         It's generic because it can be used with other types to represent
         different outcomes:
 
-        ```
+        ```mint
         // This is a result of converting a number
         Result(String, Number)
 

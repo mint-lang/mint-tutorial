@@ -78,7 +78,7 @@ module Lessons {
         values `0`, `1`, and `2`. The final branch matches any other value
         that did not match any of the previous branches.
 
-        ```
+        ```mint
         case (number) {
           0 => "Zero"
           1 => "One"

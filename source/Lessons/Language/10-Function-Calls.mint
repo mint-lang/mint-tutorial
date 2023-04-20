@@ -34,7 +34,7 @@ module Lessons {
         is `Function(...)`. Call arguments go inside the parenthese separated by
         commas.
 
-        ```
+        ```mint
         greet("World")
         greet("Joe", true)
         ```
@@ -44,12 +44,12 @@ module Lessons {
         of the arguments of the actual function itself and the **last argument**
         represents the **return type** of the function.
 
-        ```
+        ```mint
         // Function(String, String)
         fun greet (string : String) : String { ... }
 
         // Function(Function(a, b), Array(a), Array(b))
-        fun map (interator : (a, b), array : Array(a)) : Array(b) { ... }
+        fun map (interator : Function(a, b), array : Array(a)) : Array(b) { ... }
         ```
 
         The type checker checks the calls at compile time and will show errors
@@ -57,7 +57,7 @@ module Lessons {
 
         Function calls can be chained:
 
-        ```
+        ```mint
         greet = (greeting : String) {
           (name : String) {
             "\#{greeting} \#{name}!"

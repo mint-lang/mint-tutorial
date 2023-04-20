@@ -38,7 +38,7 @@ module Lessons {
         Inline styles can be defined using the `style` attribute. It takes
         either CSS string or a `Map(String, String)` of CSS values:
 
-        ```
+        ```mint
         let styleMap =
           Map.set(Map.empty(), "color", "red")
 

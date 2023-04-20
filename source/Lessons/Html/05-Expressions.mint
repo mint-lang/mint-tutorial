@@ -32,7 +32,7 @@ module Lessons {
 
         They allow you to put any expression into HTML tags:
 
-        ```
+        ```mint
         <div><{ someExpression }></div>
         ```
 
@@ -46,13 +46,13 @@ module Lessons {
         You can also use HTML expressions for attributes which take `Html` as
         the type:
 
-        ```
+        ```mint
         <MyComponent content=<{ "Some HTML Here..." }/>
         ```
 
         They also function as fragments as well:
 
-        ```
+        ```mint
         <{
           firstExpression
           secondExpression

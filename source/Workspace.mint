@@ -166,7 +166,7 @@ component Workspace {
         </div>
 
         <Ui.ScrollPanel maxSize={1000}>
-          <div::instructions>
+          <div::instructions key={lesson.path}>
             <Ui.Content>
               <{ lesson.contents }>
             </Ui.Content>

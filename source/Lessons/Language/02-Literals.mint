@@ -12,7 +12,7 @@ module Lessons {
         Represents the Boolean type. It has two possible values `true` and
         `false`.
 
-        ```
+        ```mint
         true  // A Bool that is true
         false // A Bool that is false
         ```
@@ -20,7 +20,7 @@ module Lessons {
 
         Represents a Number. In Mint all numbers are floats.
 
-        ```
+        ```mint
         3.14
         42
         -10
@@ -30,7 +30,7 @@ module Lessons {
 
         Regular expressions are represented by the `Regex` type.
 
-        ```
+        ```mint
         /foo|bar/
         /h(e+)llo/
         /\d+/

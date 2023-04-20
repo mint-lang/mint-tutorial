@@ -46,7 +46,7 @@ module Lessons {
         In HTML you normally put your styles into a `<style>` element. In Mint
         you put it into `style` blocks.
 
-        ```
+        ```mint
         style base {
           font-family: 'Comic Sans MS', cursive;
           font-size: 2em;

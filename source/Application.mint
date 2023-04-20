@@ -34,7 +34,7 @@ store Application {
     let nextActiveFile =
       Maybe.map(lesson.files[0], (lesson : LessonFile) { lesson.path })
 
-    next
+    await next
       {
         previousLesson: Lessons.previousLesson(lesson),
         nextLesson: Lessons.nextLession(lesson),
@@ -46,6 +46,14 @@ store Application {
               ({file.path, file.contents})
             })
       }
+
+    `
+    (() => {
+      for (let element of document.querySelectorAll(".language-mint:not(.hljs)")) {
+        hljs.highlightElement(element)
+      }
+    })()
+    `
 
     compile()
   }
@@ -77,7 +85,7 @@ store Application {
         next { }
       } else {
         next { values: Map.set(values, path, value) }
-        DEBOUNCED_COMPILE()()
+        (DEBOUNCED_COMPILE)()
       }
     }
   }
@@ -98,9 +106,8 @@ store Application {
           }
       }
 
-    // await "https://mint-sandbox-compiler.herokuapp.com/compile"
     let compileResponse =
-      await "http://localhost:3003/compile"
+      await "https://mint-sandbox-0170.szikszai.co/compile"
       |> Http.post()
       |> Http.jsonBody(data)
       |> Http.send()

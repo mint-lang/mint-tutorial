@@ -11,7 +11,7 @@ module Lessons {
 
         Strings are created with string literals using qoutes `""`:
 
-        ```
+        ```mint
         "A single line string!"
 
         "A multline line string
@@ -20,7 +20,7 @@ module Lessons {
 
         Strings can be broken apart with the `\\` operator:
 
-        ```
+        ```mint
         "First line" \\
         "Second line" \\
         "Third line" == "First lineSecond lineThird line"
@@ -28,13 +28,13 @@ module Lessons {
 
         Strings can be concanated with the `+` operator:
 
-        ```
+        ```mint
         ("Hello" + " World" + "!") == "Hello World!"
         ```
 
         Other values can be interpolated into strings using interpolation:
 
-        ```
+        ```mint
         let name =
           "World"
 

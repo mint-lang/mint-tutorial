@@ -51,7 +51,7 @@ module Lessons {
         Arguments come after the name of the function separated by commas and
         enclosed by parentheses:
 
-        ```
+        ```mint
         fun greet (name : String) : String {
           "Hello \#{name}!"
         }
@@ -60,7 +60,7 @@ module Lessons {
         Arguments must have a type definition after the name and can have an
         optional default value:
 
-        ```
+        ```mint
         fun greet (name : String = "World") : String {
           "Hello \#{name}!"
         }

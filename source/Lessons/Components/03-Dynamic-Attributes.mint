@@ -42,7 +42,7 @@ module Lessons {
 
         Our image is missing a `src` attribute — let's add one:
 
-        ```
+        ```mint
         <img src={src}/>
         ```
 
@@ -55,13 +55,13 @@ module Lessons {
         for people using screenreaders, or people with slow or flaky internet
         connections that can't download the image. Let's add it:
 
-        ```
+        ```mint
         <img src={src} alt="A man dances."/>
         ```
 
         We can use interpolation inside attributes. Try changing it to:
 
-        ```
+        ```mint
         "\#{name} dances."
         ```
 

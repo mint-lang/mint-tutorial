@@ -32,7 +32,7 @@ module Lessons {
 
         Arrays are typically created with an array literal:
 
-        ```
+        ```mint
         [1, 2, 3]
         ["A", "B", "C"]
         ```
@@ -40,7 +40,7 @@ module Lessons {
         You can define the type of an array using the of keyword. It is useful
         for defining the type of an empty array:
 
-        ```
+        ```mint
         [] of Number
         [1,2,3] of Number
         ```
@@ -48,7 +48,7 @@ module Lessons {
         We can access an arrays item at a given index using the bracket
         notiation:
 
-        ```
+        ```mint
         let array =
           [1, 2, 3]
 

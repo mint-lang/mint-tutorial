@@ -64,7 +64,7 @@ module Lessons {
         Records are data structures that have a fixed set of keys. You can
         define a record type with the `record` keyword:
 
-        ```
+        ```mint
         record User {
           email : String,
           name : String,
@@ -74,7 +74,7 @@ module Lessons {
 
         The easiest way to create a record is with a record literal:
 
-        ```
+        ```mint
         {
           email: "john@doe.com",
           name: "John Doe",
@@ -84,7 +84,7 @@ module Lessons {
 
         An other was is to use a record constructor:
 
-        ```
+        ```mint
         User("john@doe.com", "John Doe", 1) == {
           email: "john@doe.com",
           name: "John Doe",
@@ -94,7 +94,7 @@ module Lessons {
 
         You can access a records fields using the `.` notation:
 
-        ```
+        ```mint
         user.name == "John Doe"
         ```
 

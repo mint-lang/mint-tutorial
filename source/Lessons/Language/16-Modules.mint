@@ -38,14 +38,14 @@ module Lessons {
 
         You can call the functions of a module by using the modules name:
 
-        ```
+        ```mint
         Greeter.greet("Joe") /* "Hello Joe" */
         ```
 
         You can omit the name of the module if you are calling a function from
         another function in the same module:
 
-        ```
+        ```mint
         module Greeter {
           fun greet (name : String) : String {
             "Hello \#{name}!"
@@ -60,7 +60,7 @@ module Lessons {
         Modules are _open_ meaning that you can define additional functions in
         different places:
 
-        ```
+        ```mint
         module Greeter {
           fun greet (name : String) : String {
             "Hello \#{name}!"

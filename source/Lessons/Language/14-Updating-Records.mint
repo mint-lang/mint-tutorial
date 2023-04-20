@@ -74,7 +74,7 @@ module Lessons {
 
         To achieve that you can use the record update syntax:
 
-        ```
+        ```mint
         { user | name: "Jane Doe" }
         ```
 
@@ -83,7 +83,7 @@ module Lessons {
 
         You can update more than one field:
 
-        ```
+        ```mint
         { user | name: "Jane Doe", email: "jane@doe.com" }
         ```
 

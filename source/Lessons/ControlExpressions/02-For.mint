@@ -78,7 +78,7 @@ module Lessons {
 
         It's the `for` block and it looks like this:
 
-        ```
+        ```mint
         for (item of iterable) {
           expressions
         }
@@ -96,7 +96,7 @@ module Lessons {
         The `for` block can filter an array based on some condition specified
         in a `when` block:
 
-        ```
+        ```mint
         // This returns [0,2,4]
         for (number of [0,1,2,3,4]) {
           number

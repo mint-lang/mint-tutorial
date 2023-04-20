@@ -37,7 +37,7 @@ module Lessons {
         Tuples can be created by specifiting its items separated by commas
         inside curly brackets `{...}`
 
-        ```
+        ```mint
         {"First Value", 10, true}
         ```
 
@@ -51,7 +51,7 @@ module Lessons {
         We can access a tuples item at a given index using the bracket
         notiation:
 
-        ```
+        ```mint
         let tuple =
           {"First Value", 10, true}
 

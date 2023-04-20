@@ -55,7 +55,7 @@ module Lessons {
 
         For that you can use the `state` keyword:
 
-        ```
+        ```mint
         component Main {
           state shown : Bool = false
 

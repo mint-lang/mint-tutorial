@@ -10,7 +10,7 @@ module Lessons {
         Computed properties are functions that work like properties, they are
         defined with the `get` keyword and don't have any arguments.
 
-        ```
+        ```mint
         component Greeter {
           property name : String = ""
 

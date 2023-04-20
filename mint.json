@@ -8,6 +8,12 @@
   "source-directories": [
     "source"
   ],
+  "external": {
+    "javascripts": [
+      "assets/highlight.min.js",
+      "assets/highlight.mint.min.js"
+    ]
+  },
   "dependencies": {
     "mint-ui": {
       "repository": "https://github.com/mint-lang/mint-ui",

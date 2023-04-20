@@ -5,7 +5,7 @@ CodeMirror.defineSimpleMode("mint", {
     {regex: /true|false|void/, token: "atom"},
     {regex: /"(?:[^\\]|\\.)*?(?:"|$)/, token: "string"},
     {regex: /0x[a-f\d]+|[-+]?(?:\.\d+|\d+\.?\d*)(?:e[-+]?\d+)?/i, token: "number"},
-    {regex: /(?:let|global|component|store|fun|get|connect|exposing|if|for|state|routes|sequence|parallel|module|decode|try|catch|property|record|next|where|case)\b/,
+    {regex: /(?:enum|let|global|component|store|fun|get|connect|exposing|if|for|state|routes|const|module|decode|try|catch|property|record|next|where|case)\b/,
      token: "keyword"},
     {regex: /<\{/, mode: {spec: "mint", end: /\}>/} },
     {regex: /(<\/)(.*)(>)/, token: [null, "meta", null]},

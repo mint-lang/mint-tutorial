@@ -101,7 +101,7 @@ module Lessons {
           from start to finish. If necessary, you can navigate via the dropdown
           above (click 'Introduction').
 
-          Each tutorial chapter will have a #{button} button that you can click
+          Some tutorial chapters will have a #{button} button that you can click
           if you get stuck following the instructions.
 
           Try not to rely on it too much; you will learn faster by figuring out

@@ -64,7 +64,7 @@ module Lessons {
 
         It looks like this:
 
-        ```
+        ```mint
         if (condition) {
           ...
         } else {

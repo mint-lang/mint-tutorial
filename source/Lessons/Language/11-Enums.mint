@@ -61,7 +61,7 @@ module Lessons {
 
         For example a type for a logged in state can be written as two options:
 
-        ```
+        ```mint
         enum User {
           User::LoggedIn(String)
           User::Visitor
@@ -70,9 +70,10 @@ module Lessons {
 
         You can create a value of an enum option by using it's name and option:
 
-        ```
+        ```mint
         User::LoggedIn("Joe")
         ```
+
         As an exercise change the given example to show "Joe" as the logged in
         user.
         MARKDOWN

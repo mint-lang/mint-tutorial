@@ -50,7 +50,7 @@ module Lessons {
         The way to pass some data to a component is to use properties. They can
         be defined for components with the property keyword:
 
-        ```
+        ```mint
         property name : String = "World"
         ```
 
@@ -62,9 +62,12 @@ module Lessons {
 
         The type definition or default value can be omitted but not both:
 
-        ```
-        property name = "World" // Type inferred from the default value
-        property name : String  // The property is required
+        ```mint
+        // Type inferred from the default value
+        property name = "World"
+
+        // The property is required
+        property name : String
         ```
 
         If the passed property doesn't match it's given type then you will get

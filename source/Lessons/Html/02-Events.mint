@@ -26,7 +26,7 @@ module Lessons {
         <<#MARKDOWN
         You can set event handlers on HTML elements using the `on*` attributes:
 
-        ```
+        ```mint
         <div onClick={() { Window.alert("Hello!") }}>
           "Click Me!"
         </div>

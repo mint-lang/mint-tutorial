@@ -70,7 +70,7 @@ module Lessons {
 
         Once your component is ready all you need to do is add it as markup:
 
-        ```
+        ```mint
         <Nested/>
         ```
 

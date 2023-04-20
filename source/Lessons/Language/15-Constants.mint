@@ -31,13 +31,13 @@ module Lessons {
         They can only contain uppercase letters and underscores and you can use
         the `const` keyword to define them:
 
-        ```
+        ```mint
         const PI = 3.14159265359
         ```
 
         Also they can be accessed using their name.
 
-        ```
+        ```mint
         PI * 2 // 6.28318530718
         ```
         MARKDOWN

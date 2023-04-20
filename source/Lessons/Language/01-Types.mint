@@ -16,15 +16,16 @@ module Lessons {
         A type basically gives a name to a value conforming to a specific data
         structure.
 
-        ```
+        ```mint
         "Hello World!" // Type type of this value is `String`
         ```
 
         A type can have **type variables**. These variables makes the type
-        polymorphic, which means that the type can be used with other types
+        [polymorphic](https://en.wikipedia.org/wiki/Polymorphism_(computer_science)),
+        which means that the type can be used with other types
         instead of the type variable.
 
-        ```
+        ```mint
         // This is a generic type where the "a" can be any other type.
         Maybe(a)
 
@@ -38,7 +39,7 @@ module Lessons {
         Types appear in Mint code in multiple places usually preceeded by a
         colon:
 
-        ```
+        ```mint
         property name : String
         ```
         MARKDOWN

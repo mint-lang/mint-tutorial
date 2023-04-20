@@ -32,7 +32,7 @@ module Lessons {
 
         It's written as an HTML tag without a tagname:
 
-        ```
+        ```mint
         <>
           <div>"Hi!"</div>
           <div>"Howdy!"</div>
