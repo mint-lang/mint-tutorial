@@ -4,16 +4,10 @@ on:
   push:
     branches:
       - master
-    tags:
-      - "*"
-
-  pull_request:
-    branches:
-      - master
 
 jobs:
   build:
-    name: Build
+    name: Deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -23,7 +17,7 @@ jobs:
       - name: Install Mint
         uses: fabasoad/setup-mint-action@main
         with:
-          version: 0.16.0
+          version: 0.17.0
 
       - name: Install dependencies
         run: mint install
