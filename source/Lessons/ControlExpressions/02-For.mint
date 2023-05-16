@@ -73,7 +73,7 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        As most other languages Mint has a structrue to iterate over certain
+        As most other languages Mint has a structure to iterate over certain
         data structures.
 
         It's the `for` block and it looks like this:
@@ -105,7 +105,7 @@ module Lessons {
         }
         ```
 
-        Let's display the links of the cat videos usin a `for` expression.
+        Let's display the links of the cat videos using a `for` expression.
         MARKDOWN
     }
 }

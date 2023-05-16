@@ -70,7 +70,7 @@ module Lessons {
         property name : String
         ```
 
-        If the passed property doesn't match it's given type then you will get
+        If the passed property doesn't match its given type then you will get
         a compile error.
         MARKDOWN
     }

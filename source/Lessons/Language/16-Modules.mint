@@ -36,7 +36,7 @@ module Lessons {
         They are usually used to gather functions that relate to a specific
         type (like `String` or `Number`).
 
-        You can call the functions of a module by using the modules name:
+        You can call the functions of a module by using the module's name:
 
         ```mint
         Greeter.greet("Joe") /* "Hello Joe" */
@@ -74,7 +74,7 @@ module Lessons {
         }
         ```
 
-        It's useful if you want to extend modules in the standar library.
+        It's useful if you want to extend modules in the standard library.
         MARKDOWN
     }
 }

@@ -78,8 +78,8 @@ module Lessons {
         { user | name: "Jane Doe" }
         ```
 
-        It copies all of the not specified fields of the base record and sets
-        the specified fileds.
+        It copies all the not specified fields of the base record and sets
+        the specified fields.
 
         You can update more than one field:
 

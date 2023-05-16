@@ -46,7 +46,7 @@ module Lessons {
         ```
 
         We can access an arrays item at a given index using the bracket
-        notiation:
+        notation:
 
         ```mint
         let array =
@@ -56,7 +56,7 @@ module Lessons {
         ```
 
         When accessing an item this way the type of the item will be `Maybe(a)`
-        where a is the type of item in the array. This is so because there might
+        where a is the type of the item in the array. This is so because there might
         not be an item at that index.
         MARKDOWN
     }

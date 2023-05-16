@@ -24,7 +24,7 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        A **component** is a collection of UI elements which together a serve
+        A **component** is a collection of UI elements which together serve a
         specific function. You can think of buttons, checkboxes, selects, images,
         etc... as components.
 

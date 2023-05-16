@@ -59,7 +59,7 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        As most other languages Mint has a structrue to return different
+        As most other languages Mint has a structure to return different
         values based on some condition.
 
         It looks like this:
@@ -76,7 +76,7 @@ module Lessons {
         statement, and because of this both branches need to return something
         and those need to be of the same type.
 
-        With this information you should be able update the code to display the
+        With this information you should be able to update the code to display the
         correct button based on the `userLoggedIn` state.
         MARKDOWN
     }

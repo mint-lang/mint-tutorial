@@ -32,7 +32,7 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        Functions plays a central role in Mint. For instance, every component
+        Functions play a central role in Mint. For instance, every component
         **must** have a `render` function. That's why it's crucial you have a
         good under standing of how they work.
 

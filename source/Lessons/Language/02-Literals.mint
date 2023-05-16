@@ -28,7 +28,7 @@ module Lessons {
 
         ## Regexp
 
-        Regular expressions are represented by the `Regex` type.
+        Regular expressions are represented by the `Regexp` type.
 
         ```mint
         /foo|bar/

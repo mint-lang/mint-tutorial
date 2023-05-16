@@ -27,14 +27,14 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        Tuple is a data structure which contains a fixed set values, where each
+        Tuple is a data structure which contains a fixed set of values, where each
         value can have a different type.
 
-        * they are useful when you don't want to declare a record
+        * tuples are useful when you don't want to declare a record
         * they can contain any number of items
-        * their items can be destuctured and matched against
+        * their items can be destructured and matched against
 
-        Tuples can be created by specifiting its items separated by commas
+        A tuple can be created by specifying its items separated by commas
         inside curly brackets `{...}`
 
         ```mint
@@ -49,7 +49,7 @@ module Lessons {
         third is a `Bool`.
 
         We can access a tuples item at a given index using the bracket
-        notiation:
+        notation:
 
         ```mint
         let tuple =

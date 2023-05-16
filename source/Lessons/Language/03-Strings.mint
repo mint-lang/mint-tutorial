@@ -9,7 +9,7 @@ module Lessons {
         <<#MARKDOWN
         A `String` represents a sequence of characters.
 
-        Strings are created with string literals using qoutes `""`:
+        Strings are created with string literals using quotes `""`:
 
         ```mint
         "A single line string!"
@@ -26,7 +26,7 @@ module Lessons {
         "Third line" == "First lineSecond lineThird line"
         ```
 
-        Strings can be concanated with the `+` operator:
+        Strings can be concatenated with the `+` operator:
 
         ```mint
         ("Hello" + " World" + "!") == "Hello World!"
