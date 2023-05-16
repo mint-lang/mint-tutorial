@@ -27,7 +27,7 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        Tuple is a data structure which contains a fixed set of values, where each
+        `Tuple` is a data structure which contains a fixed set of values, where each
         value can have a different type.
 
         * tuples are useful when you don't want to declare a record

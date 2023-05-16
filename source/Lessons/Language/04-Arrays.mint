@@ -37,7 +37,7 @@ module Lessons {
         ["A", "B", "C"]
         ```
 
-        You can define the type of an array using the of keyword. It is useful
+        You can define the type of an array using the `of` keyword. It is useful
         for defining the type of an empty array:
 
         ```mint
@@ -55,8 +55,8 @@ module Lessons {
         array[0] == Maybe::Just(1)
         ```
 
-        where a is the type of the item in the array. This is so because there might
         When accessing an item this way, the type of the item will be `Maybe(a)`
+        where `a` is the type of the item in the array. This is so because there might
         not be an item at that index.
         MARKDOWN
     }
