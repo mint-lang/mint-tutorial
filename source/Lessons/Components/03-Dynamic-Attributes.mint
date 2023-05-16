@@ -47,12 +47,12 @@ module Lessons {
         ```
 
         When building web apps, it's important to make sure that they're
-        accessible to the broadest possible userbase, including people with
+        accessible to the broadest possible user base, including people with
         (for example) impaired vision or motion, or people without powerful
         hardware or good internet connections.
 
-        for people using screenreaders, or people with slow or flaky internet
         To that end, we should add the `alt` attribute that describes the image
+        for people using screen readers, or people with slow or flaky internet
         connections that can't download the image. Let's add it:
 
         ```mint

@@ -82,7 +82,7 @@ module Lessons {
         }
         ```
 
-        An other way is to use a record constructor:
+        Another way is to use a record constructor:
 
         ```mint
         User("john@doe.com", "John Doe", 1) == {

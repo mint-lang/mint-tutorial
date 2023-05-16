@@ -30,7 +30,7 @@ module Lessons {
         into for example a `div`. In those cases, you can use a **HTML
         fragment**.
 
-        It's written as an HTML tag without a tagname:
+        It's written as an HTML tag without a tag name:
 
         ```mint
         <>

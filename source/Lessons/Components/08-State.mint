@@ -73,7 +73,7 @@ module Lessons {
 
         The state can be moved forward using the `next` keyword.
 
-        As an exercise, you can add an other button to hide the text!
+        As an exercise, you can add another button to hide the text!
         MARKDOWN
     }
 }
