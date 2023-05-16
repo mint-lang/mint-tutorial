@@ -37,9 +37,9 @@ module Lessons {
         * `Function(Html.Event, a)`
         * `Function(a)`
 
-        In regular JavaScript there are multiple event objects with different
+        In regular JavaScript, there are multiple event objects with different
         values. [`Html.Event`](https://www.mint-lang.com/api/records/Html.Event)
-        is a record which contains normalized values so it can be used in all
+        is a record which contains normalized values, so it can be used in all
         event handlers.
         MARKDOWN
     }

@@ -10,7 +10,7 @@ module Lessons {
         Mint is a strongly typed programming language, which means that you will
         encounter a lot of type definitions.
 
-        Syntax wise a type definition consists of an identifier starting with a
+        Syntax wise, a type definition consists of an identifier starting with a
         capital letter, and followed by letters and numbers.
 
         A type basically gives a name to a value conforming to a specific data
@@ -36,7 +36,7 @@ module Lessons {
         These kinds of types are called composite types because the data
         structure they describe are composed of multiple types.
 
-        Types appear in Mint code in multiple places usually preceded by a
+        Types appear in Mint code in multiple places, usually preceded by a
         colon:
 
         ```mint

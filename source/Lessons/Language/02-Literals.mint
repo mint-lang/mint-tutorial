@@ -18,7 +18,7 @@ module Lessons {
         ```
         ## Number
 
-        Represents a Number. In Mint all numbers are floats.
+        Represents a Number. In Mint, all numbers are floats.
 
         ```mint
         3.14

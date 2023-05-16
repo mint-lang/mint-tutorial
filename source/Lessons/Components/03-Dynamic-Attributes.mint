@@ -51,8 +51,8 @@ module Lessons {
         (for example) impaired vision or motion, or people without powerful
         hardware or good internet connections.
 
-        To that end we should add the `alt` attribute that describes the image
         for people using screenreaders, or people with slow or flaky internet
+        To that end, we should add the `alt` attribute that describes the image
         connections that can't download the image. Let's add it:
 
         ```mint

@@ -98,7 +98,7 @@ module Lessons {
         user.name == "John Doe"
         ```
 
-        As an exercise add an `age` field to the record!
+        As an exercise, add an `age` field to the record!
         MARKDOWN
     }
 }

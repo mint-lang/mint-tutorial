@@ -30,7 +30,7 @@ module Lessons {
       contents:
         <<#MARKDOWN
         Anonymous functions look like regular functions but without the `fun`
-        keyword and the name and they are usually used in event handlers or as
+        keyword and the name, and they are usually used in event handlers or as
         arguments to other function calls:
 
         ```mint

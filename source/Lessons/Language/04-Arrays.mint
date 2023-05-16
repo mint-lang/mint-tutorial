@@ -55,8 +55,8 @@ module Lessons {
         array[0] == Maybe::Just(1)
         ```
 
-        When accessing an item this way the type of the item will be `Maybe(a)`
         where a is the type of the item in the array. This is so because there might
+        When accessing an item this way, the type of the item will be `Maybe(a)`
         not be an item at that index.
         MARKDOWN
     }

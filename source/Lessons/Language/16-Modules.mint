@@ -57,7 +57,7 @@ module Lessons {
         }
         ```
 
-        Modules are _open_ meaning that you can define additional functions in
+        Modules are _open_, meaning that you can define additional functions in
         different places:
 
         ```mint

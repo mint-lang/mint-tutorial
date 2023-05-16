@@ -73,10 +73,10 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        As most other languages Mint has a structure to iterate over certain
+        As most other languages, Mint has a structure to iterate over certain
         data structures.
 
-        It's the `for` block and it looks like this:
+        It's the `for` block, and it looks like this:
 
         ```mint
         for (item of iterable) {
@@ -84,11 +84,11 @@ module Lessons {
         }
         ```
 
-        Unlike in some languages `for` in Mint is an expression and not a
+        Unlike in some languages, `for` in Mint is an expression and not a
         statement, and because of this it returns an `Array(item)` where
         `item` is the type of the last `expression`.
 
-        Currently it only can iterate through these types: `Array(item)`, `Set(item)`,
+        Currently, it only can iterate through these types: `Array(item)`, `Set(item)`,
         and `Map(key,value)`.
 
         ## Filtering using `when`

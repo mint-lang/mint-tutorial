@@ -41,9 +41,9 @@ module Lessons {
         "Hello \#{world}!" == "Hello World!"
         ```
 
-        Since Mint is a strongly typed language you can only interpolate other
+        Since Mint is a strongly typed language, you can only interpolate other
         `String` or `Number` typed values (numbers are implicitly converted to
-        string). If you try to use something else you will get a nice error
+        string). If you try to use something else, you will get a nice error
         message.
         MARKDOWN
     }

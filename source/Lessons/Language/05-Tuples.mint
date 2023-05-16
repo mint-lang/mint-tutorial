@@ -44,7 +44,7 @@ module Lessons {
         The type of a tuple is `Tuple(...)` where each parameter is an item of
         a tuple.
 
-        For example the type `Tuple(String, Number, Bool)` represents a tuple
+        For example, the type `Tuple(String, Number, Bool)` represents a tuple
         where the first element is a `String` the second is a `Number` the
         third is a `Bool`.
 

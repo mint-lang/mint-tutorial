@@ -68,7 +68,7 @@ module Lessons {
         Instead, we can write components in other files and use them as we
         would other elements.
 
-        Once your component is ready all you need to do is add it as markup:
+        Once your component is ready, all you need to do is add it as markup:
 
         ```mint
         <Nested/>

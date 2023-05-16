@@ -57,9 +57,9 @@ module Lessons {
         * You can use some expressions inside the HTML tags, like `if` and
           `for`.
 
-        * Attributes cannot be naked so they must have a value.
+        * Attributes cannot be naked, so they must have a value.
 
-        Attributes are usually strings but there are some exceptions:
+        Attributes are usually strings, but there are some exceptions:
 
         * Anything starting with `on` is considered an event, which takes
           a function instead of a string (`onClick={() { Window.alert("Hello!") }}`).

@@ -27,7 +27,7 @@ module Lessons {
       contents:
         <<#MARKDOWN
         There are cases where you don't want to wrap multiple `HTML` elements
-        into for example a `div`. In those cases you can use a **HTML
+        into for example a `div`. In those cases, you can use a **HTML
         fragment**.
 
         It's written as an HTML tag without a tagname:
@@ -41,7 +41,7 @@ module Lessons {
         ```
 
         HTML fragments can only have one attribute `key` which is used to
-        identify the fragment in specific cases which we will cover later.
+        identify the fragment in specific cases, which we will cover later.
         MARKDOWN
     }
 }
