@@ -45,8 +45,8 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        Functions can have arguments. Arguments must start with a lowercase
-        letter and can contain only letters and numbers.
+        Functions can have arguments. Argument names must start with a
+        lowercase letter and can contain only letters and numbers.
 
         Arguments come after the name of the function, separated by commas and
         enclosed by parentheses:

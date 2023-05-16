@@ -13,8 +13,7 @@ module Lessons {
         Syntax wise, a type definition consists of an identifier starting with a
         capital letter, and followed by letters and numbers.
 
-        A type basically gives a name to a value conforming to a specific data
-        structure.
+        A type gives a name to a value conforming to a specific data structure.
 
         ```mint
         "Hello World!" // The type of this value is `String`

@@ -42,8 +42,8 @@ module Lessons {
         Greeter.greet("Joe") /* "Hello Joe" */
         ```
 
-        You can omit the name of the module if you are calling a function from
-        another function in the same module:
+        You can omit the name of the module if you are calling the function from
+        inside the module:
 
         ```mint
         module Greeter {

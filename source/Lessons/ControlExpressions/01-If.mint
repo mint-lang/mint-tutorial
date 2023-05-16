@@ -59,7 +59,7 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        As most other languages, Mint has a structure to return different
+        As most other languages, Mint has a construct to return different
         values based on some condition.
 
         It looks like this:
