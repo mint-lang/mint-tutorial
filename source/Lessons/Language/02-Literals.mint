@@ -9,7 +9,7 @@ module Lessons {
         <<#MARKDOWN
         ## Boolean
 
-        Represents the Boolean type. It has two possible values `true` and
+        Represents the `Boolean` type. It has two possible values `true` and
         `false`.
 
         ```mint
@@ -18,7 +18,7 @@ module Lessons {
         ```
         ## Number
 
-        Represents a Number. In Mint all numbers are floats.
+        Represents a `Number`. In Mint, all numbers are floats.
 
         ```mint
         3.14
@@ -28,7 +28,7 @@ module Lessons {
 
         ## Regexp
 
-        Regular expressions are represented by the `Regex` type.
+        Regular expressions are represented by the `Regexp` type.
 
         ```mint
         /foo|bar/

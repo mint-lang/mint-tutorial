@@ -71,7 +71,7 @@ module Lessons {
       contents:
         <<#MARKDOWN
         Sometimes it's necessary to access elements or components in a component
-        for a number of reasons. To do that you can use the `as name` notation:
+        for a number of reasons. To do that, you can use the `as name` notation:
 
         ```mint
         <input as input/>

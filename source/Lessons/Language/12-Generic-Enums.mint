@@ -40,7 +40,7 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        Enums can be generic meaning that you can specify relationships using
+        Enums can be generic, meaning that you can specify relationships using
         type variables.
 
         An example for this is the `Result` enum:

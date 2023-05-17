@@ -31,7 +31,7 @@ module Lessons {
       contents:
         <<#MARKDOWN
         You can call on any value using parentheses `()` provided that it's type
-        is `Function(...)`. Call arguments go inside the parenthese separated by
+        is `Function(...)`. Call arguments go inside the parentheses separated by
         commas.
 
         ```mint
@@ -40,13 +40,13 @@ module Lessons {
         ```
 
         The `Function` type is a special type because it describes a function
-        instead of data. The type arguments of the type represents the types
+        instead of data. The type arguments of the type represent the types
         of the arguments of the actual function itself and the **last argument**
         represents the **return type** of the function.
 
         ```mint
         // Function(String, String)
-        fun greet (string : String) : String { ... }
+        fun greet (name : String) : String { ... }
 
         // Function(Function(a, b), Array(a), Array(b))
         fun map (interator : Function(a, b), array : Array(a)) : Array(b) { ... }

@@ -82,7 +82,7 @@ module Lessons {
         }
         ```
 
-        An other was is to use a record constructor:
+        Another way is to use a record constructor:
 
         ```mint
         User("john@doe.com", "John Doe", 1) == {
@@ -92,13 +92,13 @@ module Lessons {
         }
         ```
 
-        You can access a records fields using the `.` notation:
+        You can access a record's fields using the `.` notation:
 
         ```mint
         user.name == "John Doe"
         ```
 
-        As an exercise add an `age` field to the record!
+        As an exercise, add an `age` field to the record!
         MARKDOWN
     }
 }

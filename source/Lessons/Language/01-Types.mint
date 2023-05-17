@@ -10,17 +10,16 @@ module Lessons {
         Mint is a strongly typed programming language, which means that you will
         encounter a lot of type definitions.
 
-        Syntax wise a type definition consists of an identifier starting with a
+        Syntax wise, a type definition consists of an identifier starting with a
         capital letter, and followed by letters and numbers.
 
-        A type basically gives a name to a value conforming to a specific data
-        structure.
+        A type gives a name to a value conforming to a specific data structure.
 
         ```mint
-        "Hello World!" // Type type of this value is `String`
+        "Hello World!" // The type of this value is `String`
         ```
 
-        A type can have **type variables**. These variables makes the type
+        A type can have **type variables**. These variables make the type
         [polymorphic](https://en.wikipedia.org/wiki/Polymorphism_(computer_science)),
         which means that the type can be used with other types
         instead of the type variable.
@@ -33,10 +32,10 @@ module Lessons {
         Maybe(String)
         ```
 
-        These kind of types are called composite types because the data
+        These kinds of types are called composite types because the data
         structure they describe are composed of multiple types.
 
-        Types appear in Mint code in multiple places usually preceeded by a
+        Types appear in Mint code in multiple places, usually preceded by a
         colon:
 
         ```mint

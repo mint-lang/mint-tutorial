@@ -55,26 +55,26 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        In Mint **enums** represents [Algebraic Data Types](https://en.wikipedia.org/wiki/Algebraic_data_type),
-        with them it's possible to describe data which contains different types
+        In Mint, **enums** represents [Algebraic Data Types](https://en.wikipedia.org/wiki/Algebraic_data_type),
+        with them, it's possible to describe data which contains different types
         of values (called options).
 
-        For example a type for a logged in state can be written as two options:
+        For example, a type for a logged in state can be written as two options:
 
         ```mint
         enum User {
-          User::LoggedIn(String)
-          User::Visitor
+          LoggedIn(String)
+          Visitor
         }
         ```
 
-        You can create a value of an enum option by using it's name and option:
+        You can create a value of an enum option by using its name and option:
 
         ```mint
         User::LoggedIn("Joe")
         ```
 
-        As an exercise change the given example to show "Joe" as the logged in
+        As an exercise, change the given example to show "Joe" as the logged in
         user.
         MARKDOWN
     }

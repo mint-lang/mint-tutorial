@@ -36,14 +36,14 @@ module Lessons {
         They are usually used to gather functions that relate to a specific
         type (like `String` or `Number`).
 
-        You can call the functions of a module by using the modules name:
+        You can call the functions of a module by using the module's name:
 
         ```mint
         Greeter.greet("Joe") /* "Hello Joe" */
         ```
 
-        You can omit the name of the module if you are calling a function from
-        another function in the same module:
+        You can omit the name of the module if you are calling the function from
+        inside the module:
 
         ```mint
         module Greeter {
@@ -57,7 +57,7 @@ module Lessons {
         }
         ```
 
-        Modules are _open_ meaning that you can define additional functions in
+        Modules are _open_, meaning that you can define additional functions in
         different places:
 
         ```mint
@@ -74,7 +74,7 @@ module Lessons {
         }
         ```
 
-        It's useful if you want to extend modules in the standar library.
+        It's useful if you want to extend modules in the standard library.
         MARKDOWN
     }
 }

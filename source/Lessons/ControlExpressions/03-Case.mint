@@ -88,9 +88,9 @@ module Lessons {
         ```
 
         The `case` expression is more powerful than this simple example shows
-        and will be covering it in other lessons.
+        and we will be covering it in other lessons.
 
-        As an exercise you can add the branches for `3` and `4`.
+        As an exercise, you can add the branches for `3` and `4`.
         MARKDOWN
     }
 }

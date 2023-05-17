@@ -45,24 +45,24 @@ module Lessons {
       contents:
         <<#MARKDOWN
         Mint mostly supports writing HTML as is and you can use any tags you
-        would like. It uses a **virtual dom** to render the defined tags to
-        the document (currenty [Preact](https://preactjs.com/) but it might
+        would like. It uses a **virtual DOM** to render the defined tags to
+        the document (currently [Preact](https://preactjs.com/), but it might
         change in the future).
 
         There are some changes and additions which you should be aware of:
 
-        * Text needs to be sepcified as strings, this is because it allows you
-          to control whitespace expilictly.
+        * Text needs to be specified as strings, this is because it allows you
+          to control whitespace explicitly.
 
         * You can use some expressions inside the HTML tags, like `if` and
           `for`.
 
-        * Attributes cannot be naked so they must have a value.
+        * Attributes cannot be naked, so they must have a value.
 
-        Attributes are usually strings but there are some exceptions:
+        Attributes are usually strings, but there are some exceptions:
 
-        * Anything starting with `on` are considered events a take functions
-          instead of strings `onClick={() { Window.alert("Hello!") }}`.
+        * Anything starting with `on` is considered an event, which takes
+          a function instead of a string (`onClick={() { Window.alert("Hello!") }}`).
 
         * `readonly`, `disabled` and `checked` takes a `Bool`
           (`checked={true}`).

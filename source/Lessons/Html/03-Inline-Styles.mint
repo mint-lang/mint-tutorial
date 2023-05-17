@@ -33,7 +33,7 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        One of the was you can define CSS for a HTML tag using inline styles.
+        You can define CSS for an HTML tag using inline styles.
 
         Inline styles can be defined using the `style` attribute. It takes
         either CSS string or a `Map(String, String)` of CSS values:

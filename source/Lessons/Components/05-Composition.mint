@@ -68,7 +68,7 @@ module Lessons {
         Instead, we can write components in other files and use them as we
         would other elements.
 
-        Once your component is ready all you need to do is add it as markup:
+        Once your component is ready, all you need to do is add it as markup:
 
         ```mint
         <Nested/>
@@ -78,7 +78,7 @@ module Lessons {
         compiler finds all `.mint` files in your project and parses them
         automatically. Anything in them is available everywhere.
 
-        Also notice that the component name `Nested` is capitalised. This
+        Also notice that the component name `Nested` is capitalized. This
         convention has been adopted to allow us to differentiate between
         user-defined components and regular HTML tags.
        MARKDOWN

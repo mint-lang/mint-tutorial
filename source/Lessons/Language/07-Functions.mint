@@ -32,9 +32,9 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        Functions plays a central role in Mint. For instance, every component
+        Functions play a central role in Mint. For instance, every component
         **must** have a `render` function. That's why it's crucial you have a
-        good under standing of how they work.
+        good understanding of how they work.
 
         In Mint, every function starts with the `fun` keyword then name (a
         lowercase letter followed by letters and numbers). After the name (or
@@ -70,7 +70,7 @@ module Lessons {
         ```
 
         Let's give it a shot! Declare a `name` variable in your `render`
-        function and replace the currently hardcoded greeting.
+        function and replace the currently hard-coded greeting.
         MARKDOWN
     }
 }

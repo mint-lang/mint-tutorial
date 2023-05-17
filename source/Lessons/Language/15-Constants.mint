@@ -28,14 +28,14 @@ module Lessons {
         running, they can be defined for top level entities like `module`,
         `component`, `suite` or `store`.
 
-        They can only contain uppercase letters and underscores and you can use
-        the `const` keyword to define them:
+        They can only contain uppercase letters and underscores. Use the
+        `const` keyword to define them:
 
         ```mint
         const PI = 3.14159265359
         ```
 
-        Also they can be accessed using their name.
+        They can be accessed using their name.
 
         ```mint
         PI * 2 // 6.28318530718
