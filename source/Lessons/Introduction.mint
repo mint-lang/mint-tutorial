@@ -86,8 +86,8 @@ module Lessons {
           It provides you with all the necessary tooling to write **error free**,
           **readable**, and **maintainable** software.
 
-          Mint is strongly typed, and compiles to JavaScript. This means your
-          code is less prone to errors, easier to maintain, and benefit from
+          Mint is strongly typed, and compiles to JavaScript. This means, your
+          code is less prone to errors, easier to maintain, and benefits from
           optimizations done by the Mint compiler.
 
           ## How to use this tutorial
