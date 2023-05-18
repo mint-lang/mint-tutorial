@@ -60,13 +60,14 @@ module Lessons {
         * Properties can be referenced by name within the component (in styles,
           functions, computed properties, etc...).
 
-        The type definition or default value can be omitted, but not both:
+        The type definition or the default value can be omitted, but not both:
 
         ```mint
         // Type inferred from the default value
+        // Optional on component instantiation
         property name = "World"
 
-        // The property is required
+        // Required on component instantiation
         property name : String
         ```
 

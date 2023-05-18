@@ -35,7 +35,7 @@ module Lessons {
         const PI = 3.14159265359
         ```
 
-        They can be accessed using their name.
+        They can be accessed using their name:
 
         ```mint
         PI * 2 // 6.28318530718
