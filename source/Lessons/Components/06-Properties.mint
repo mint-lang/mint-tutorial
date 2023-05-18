@@ -64,9 +64,10 @@ module Lessons {
 
         ```mint
         // Type inferred from the default value
+        // Optional on component instantiation
         property name = "World"
 
-        // The type definition is required
+        // Required on component instantiation
         property name : String
         ```
 
