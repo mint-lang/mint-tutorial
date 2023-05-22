@@ -116,7 +116,7 @@ store Application {
 
     case (compileResponse) {
       Result::Ok(response) =>
-        next { previewURL: Url.createObjectUrlFromString(response.body, "text/html") }
+        next { previewURL: Url.createObjectUrlFromString(response.bodyString, "text/html") }
 
       Result::Err =>
         next { }
