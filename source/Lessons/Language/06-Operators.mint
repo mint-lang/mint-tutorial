@@ -28,9 +28,9 @@ module Lessons {
           }
         ],
       contents:
-        () {
+        {
           let rows =
-            for (operator of [
+            for operator of [
               {"|>", 0, "Pipe"},
               {"or", 0, "Fallback"},
               {"||", 5, "Logical OR"},
@@ -48,7 +48,7 @@ module Lessons {
               {"%", 14, "Arithmetic remainder"},
               {"**", 15, "Arithmentic Exponentiation"},
               {"!", 16, "Negation"}
-            ]) {
+            ] {
               {
                 operator[0],
                 [
@@ -95,6 +95,6 @@ module Lessons {
           * `or` only works on `Result` and `Maybe`
           * `+` only works on `String` and `Number`
           MARKDOWN
-        }()
+        }
     }
 }

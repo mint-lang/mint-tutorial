@@ -42,7 +42,7 @@ store Application {
         lesson: lesson,
         values:
           Map.fromArray(
-            for (file of lesson.files) {
+            for file of lesson.files {
               ({file.path, file.contents})
             })
       }
@@ -64,9 +64,9 @@ store Application {
       {
         values:
           Map.fromArray(
-            for (file of lesson.files) {
+            for file of lesson.files {
               ({
-                file.path, if (String.isNotBlank(file.solution)) {
+                file.path, if String.isNotBlank(file.solution) {
                   file.solution
                 } else {
                   file.contents
@@ -81,7 +81,7 @@ store Application {
   /* Updates the source code of a file and compiles to get the preview URL. */
   fun updateValue (path : String) {
     (value : String) {
-      if (Map.getWithDefault(values, path, "") == value) {
+      if Map.getWithDefault(values, path, "") == value {
         next { }
       } else {
         next { values: Map.set(values, path, value) }
@@ -98,7 +98,7 @@ store Application {
     let data =
       encode {
         files:
-          for (path, contents of values) {
+          for path, contents of values {
             {
               contents: contents,
               path: path
@@ -106,20 +106,17 @@ store Application {
           }
       }
 
+    // https://mint-sandbox-0170.szikszai.co/compile
     let compileResponse =
-      await "https://mint-sandbox-0170.szikszai.co/compile"
+      await "http://localhost:3003/compile"
       |> Http.post()
       |> Http.jsonBody(data)
       |> Http.send()
 
     Url.revokeObjectUrl(previewURL)
 
-    case (compileResponse) {
-      Result::Ok(response) =>
-        next { previewURL: Url.createObjectUrlFromString(response.bodyString, "text/html") }
-
-      Result::Err =>
-        next { }
+    if let Result::Ok(response) = compileResponse {
+      next { previewURL: Url.createObjectUrlFromString(response.bodyString, "text/html") }
     }
   }
 }

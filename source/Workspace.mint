@@ -177,8 +177,8 @@ component Workspace {
           <Ui.DarkModeToggle/>
 
           <Ui.Container>
-            if (hasSolution) {
-              if (isSolution) {
+            if hasSolution {
+              if isSolution {
                 <{  }>
               } else {
                 <Ui.Button
@@ -200,7 +200,7 @@ component Workspace {
         </div>
       </div>
 
-      if (Array.isEmpty(lesson.files)) {
+      if Array.isEmpty(lesson.files) {
         <div::empty>
           <Ui.IllustratedMessage
             subtitle=<{ "This chapter does not have an interactive example." }>
@@ -217,7 +217,7 @@ component Workspace {
             <{
               {
                 let tabs =
-                  for (file of lesson.files) {
+                  for file of lesson.files {
                     {
                       content:
                         <div style="display:grid;min-height:0;">
@@ -235,7 +235,7 @@ component Workspace {
                               @asset(../assets/codemirror.dark.css)
                             ]
                             theme={
-                              if (darkMode) {
+                              if darkMode {
                                 "dark"
                               } else {
                                 "light"

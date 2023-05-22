@@ -6,9 +6,10 @@ routes {
     let lesson =
       Array.find(Lessons:ITEMS, (lesson : Lesson) { lesson.path == path })
 
-    case (lesson) {
-      Maybe::Nothing => Window.navigate("/introduction")
-      Maybe::Just(item) => Application.setLesson(item)
+    if let Maybe::Just(item) = lesson {
+      Application.setLesson(item)
+    } else {
+      Window.navigate("/introduction")
     }
   }
 }

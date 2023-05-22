@@ -26,6 +26,7 @@ module Lessons {
       LANGUAGE_FUNCTION_ARGUMENTS,
       LANGUAGE_ANONYMOUS_FUNCTIONS,
       LANGUAGE_FUNCTION_CALLS,
+      LANGUAGE_BLOCKS,
       LANGUAGE_ENUMS,
       LANGUAGE_GENERIC_ENUMS,
       LANGUAGE_RECORDS,
@@ -35,6 +36,8 @@ module Lessons {
       CONTROL_EXPRESSIONS_IF,
       CONTROL_EXPRESSIONS_FOR,
       CONTROL_EXPRESSIONS_CASE,
+      PATTERN_MATCHING_CASE,
+      PATTERN_MATCHING_IF_LET,
       HTML_TAGS,
       HTML_EVENTS,
       HTML_INLINE_STYLES,
@@ -51,9 +54,9 @@ module Lessons {
     ]
 
   const LIST_ITEMS =
-    for (item of ITEMS) {
+    for item of ITEMS {
       let title =
-        if (String.isNotBlank(item.title)) {
+        if String.isNotBlank(item.title) {
           "#{item.category} / #{item.title}"
         } else {
           item.category
