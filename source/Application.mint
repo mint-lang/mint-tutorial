@@ -106,9 +106,9 @@ store Application {
           }
       }
 
-    // http://localhost:3003/compile
+    // https://mint-sandbox-0170.szikszai.co/compile
     let compileResponse =
-      await "https://mint-sandbox-0170.szikszai.co/compile"
+      await "http://localhost:3003/compile"
       |> Http.post()
       |> Http.jsonBody(data)
       |> Http.send()
