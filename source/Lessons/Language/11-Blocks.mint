@@ -28,10 +28,10 @@ module Lessons {
         ],
       contents:
         <<#MARKDOWN
-        In some of the previous chapters there were `let` statments (which we
+        In some of the previous chapters, there were `let` statements (which we
         cover later on). These statements appear in **blocks**.
 
-        A **block** is just a number of statements encolsed by brackets `{...}`
+        A **block** is just a number of statements enclosed by brackets `{...}`
         used in many places (function body, branches of `if` expressions, etc...),
         but they can be used as a **standalone expression** as well:
 
@@ -43,8 +43,8 @@ module Lessons {
         }
         ```
 
-        Statements in a block are evaulated sequentially from top to bottom and
-        the value from last statement is returned.
+        Statements in a block are evaluated sequentially from top to bottom and
+        the value from the last statement is returned.
         MARKDOWN
     }
 }
