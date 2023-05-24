@@ -61,15 +61,15 @@ module Lessons {
         Maybe::Just(value)
         ```
 
-        If we **destructure** that **pattern** against the data the `value`
+        If we **destructure** that **pattern** against the data, the `value`
         variable will be assigned the `"Hello"` value.
 
-        We can do this in multiple ways one of which is the same `case`
-        statement we had before. You can see in the example that are multiple
-        **branches** that are returned if it matches its pattern.
+        We can do this in multiple ways, one of which is the same `case`
+        statement we had before. In the example, there are three **branches**.
+        The value of the first branch matching the pattern is returned.
 
-        If a branch doesn't have a pattern (or value) it covers all other
-        possibilities.
+        If a branch doesn't have a pattern (or value), like the last branch
+        in the example, it covers all other possibilities.
         MARKDOWN
     }
 }
