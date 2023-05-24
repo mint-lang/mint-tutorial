@@ -26,7 +26,7 @@ module Lessons {
                     Status::Loaded("Joe")
 
                   <div>
-                    case (user) {
+                    case user {
                       Status::Errored(error) => "An error happened: \#{error}!"
                       Status::Loading => "Loading..."
                       Status::Loaded(value) => value

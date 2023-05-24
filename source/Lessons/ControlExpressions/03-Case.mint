@@ -24,7 +24,7 @@ module Lessons {
                       type="number"/>
 
                     <p>
-                      case (number) {
+                      case number {
                         0 => "Zero"
                         1 => "One"
                         2 => "Two"
@@ -54,7 +54,7 @@ module Lessons {
                       type="number"/>
 
                     <p>
-                      case (number) {
+                      case number {
                         0 => "Zero"
                         1 => "One"
                         2 => "Two"
@@ -79,7 +79,7 @@ module Lessons {
         that did not match any of the previous branches.
 
         ```mint
-        case (number) {
+        case number {
           0 => "Zero"
           1 => "One"
           2 => "Two"

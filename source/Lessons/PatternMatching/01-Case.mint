@@ -14,7 +14,7 @@ module Lessons {
               <<~MINT
               component Main {
                 fun greet (value : Maybe(Tuple(String, Maybe(String)))) : String {
-                  case (value) {
+                  case value {
                     Maybe::Just({name, Maybe::Just(greeting)}) =>
                       "\#{greeting} \#{name}!"
 

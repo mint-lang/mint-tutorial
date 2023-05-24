@@ -18,7 +18,7 @@ module Lessons {
                 }
 
                 fun updateItem : Promise(Void) {
-                  case (maybeItem) {
+                  case maybeItem {
                     Maybe::Just(item) => item.update("Bello")
                     Maybe::Nothing => next {}
                   }

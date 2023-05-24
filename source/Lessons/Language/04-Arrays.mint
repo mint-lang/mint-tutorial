@@ -15,7 +15,7 @@ module Lessons {
               component Main {
                 fun render : Html {
                   <div>
-                    for (item of ["Joe", "World"]) {
+                    for item of ["Joe", "World"] {
                       <div>
                         <{ item }>
                       </div>

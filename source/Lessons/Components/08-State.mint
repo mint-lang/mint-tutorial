@@ -15,7 +15,7 @@ module Lessons {
                 state shown : Bool = false
 
                 fun render : Html {
-                  if (shown) {
+                  if shown {
                     <>
                       <div>"Hello there!"</div>
                       <button onClick={() { next { shown: false }}}>
@@ -36,7 +36,7 @@ module Lessons {
                 state shown : Bool = false
 
                 fun render : Html {
-                  if (shown) {
+                  if shown {
                     <div>"Hello there!"</div>
                   } else {
                     <button onClick={() { next { shown: true }}}>
@@ -60,7 +60,7 @@ module Lessons {
           state shown : Bool = false
 
           fun render : Html {
-            if (shown) {
+            if shown {
               <div>"Hello there!"</div>
             } else {
               <button onClick={() { next { shown: true }}}>

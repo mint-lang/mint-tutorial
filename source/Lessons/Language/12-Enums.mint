@@ -22,7 +22,7 @@ module Lessons {
                     User::LoggedIn("Joe")
 
                   <div>
-                    case (user) {
+                    case user {
                       User::LoggedIn(name) => "I am \#{name}!"
                       User::Visitor => "I am a visitor!"
                     }
@@ -43,7 +43,7 @@ module Lessons {
                     User::Visitor
 
                   <div>
-                    case (user) {
+                    case user {
                       User::LoggedIn(name) => "I am \#{name}!"
                       User::Visitor => "I am a visitor!"
                     }

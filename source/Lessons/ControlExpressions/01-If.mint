@@ -18,7 +18,7 @@ module Lessons {
 
                 fun render : Html {
                   <div>
-                    if (userLoggedIn) {
+                    if userLoggedIn {
                       <button onClick={toggle}>
                         "Log out"
                       </button>
@@ -65,7 +65,7 @@ module Lessons {
         It looks like this:
 
         ```mint
-        if (condition) {
+        if condition {
           ...
         } else {
           ...

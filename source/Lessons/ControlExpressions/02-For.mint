@@ -22,7 +22,7 @@ module Lessons {
                     <h1>"The Famous Cats of YouTube"</h1>
 
                     <ul>
-                      for (cat of cats) {
+                      for cat of cats {
                         <li>
                           <a
                             href="https://www.youtube.com/watch?v=\#{cat[1]}"
@@ -79,7 +79,7 @@ module Lessons {
         It's the `for` block, and it looks like this:
 
         ```mint
-        for (item of iterable) {
+        for item of iterable {
           expressions
         }
         ```
@@ -98,7 +98,7 @@ module Lessons {
 
         ```mint
         // This returns [0,2,4]
-        for (number of [0,1,2,3,4]) {
+        for number of [0,1,2,3,4] {
           number
         } when {
           (number % 2) == 0
